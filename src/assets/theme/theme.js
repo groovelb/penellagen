@@ -1,0 +1,143 @@
+const theme = {
+  color: {
+    bg: '#FAF5F1',
+    lightBeige: '#EDE1DD',
+    beige: '#b1a6a4',
+    pinkBeige: '#AA837B',
+    emeraldGreen: "#00343A",
+    greenTea: '#B1C79E',
+    pinkOrange: '#FF775C',
+    white: '#FFFFFF',
+    black: '#333333'
+  },
+  spacing: {
+    // Basic Unit X N
+    unit: '16px',
+    // Unit for Spacing Text & Component 
+    tiny: '2px',
+    small: '4px',
+    regular: '8px',
+    medium: '12px',
+    big: '40px',
+    // Unit for Spacing by Context
+    liveArea: '1280px',
+    sectionPadding: '160px',
+    titleMarginBottom: '80px',
+    subSectionPadding: '48px',
+    contentMarginBottom1: '48px',
+    contentMarginBottom2: '80px',
+    headlineMarginBottom: '32px',
+    subsectionMarginBottom: '160px',
+    horizonTitle: '214px',
+    horizonContent: '400px',
+  },
+  layout: {
+    flexRow:`
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    `,
+    flexCol:`
+      display: flex;
+      flex-direction: column;
+    `,
+    flexRowCol:`
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      @media screen and (max-width: 480px) {
+        flex-direction: column;
+      }
+    `
+    ,
+    alignCenter:`
+      align-items: center;
+    `,
+    flexCenter:`
+      align-items: center;
+      justify-content: center;
+    `
+  },
+  typeBlock: {
+    msgBig: `
+      font-family: BigCaslon;
+      font-size: 108px;
+      line-height: 124px;
+      letter-spacing: 11px;
+      @media screen and (max-width: 480px) {
+        font-size: 48px;
+        line-height: 64px;
+        letter-spacing: 4.5px;
+      }
+    `,
+    msgMiddle: `
+      font-family: BigCaslon;
+      font-size: 44px;
+      line-height: 56px;
+      letter-spacing: 4px;
+      @media screen and (max-width: 480px) {
+        font-size: 36px;
+        line-height: 44px;
+        letter-spacing: 2px;
+      }
+    `,
+    numberingHuge: `
+      font-family: BigCaslon;
+      font-size: 96px;
+      line-height: 115px;
+      letter-spacing: 0px;
+    `,
+    numberingBig: `
+      font-family: BigCaslon !important;
+      font-size: 64px !important;
+      line-height: 76px !important;
+      letter-spacing: 0px;
+      @media screen and (max-width: 480px) {
+        font-size: 48px !important;
+        line-height: 56px !important;
+        letter-spacing: 4.5px !important;
+      }
+    `,
+    h1: `
+      font-family: AppleSDGothicNeoB;
+      font-size: 32px;
+      line-height: 48px;
+      letter-spacing: 0px;
+      @media screen and (max-width: 480px) {
+        font-size: 28px;
+        line-height: 40px;
+        letter-spacing: 0px;
+      }
+    `,
+    subtitle: `
+      font-family: AppleSDGothicNeoB;
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: 0px;
+      @media screen and (max-width: 480px) {
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: 0px;
+      }
+    `,
+    body: `
+      font-family: AppleSDGothicNeoB;
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0px;
+    `,
+    table: `
+      font-family: AppleSDGothicNeoB;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0px;
+      @media screen and (max-width: 480px) {
+        font-size: 14.8px;
+        line-height: 20px;
+        letter-spacing: 0px;
+      }
+    `,
+  }
+};
+
+export default theme;
