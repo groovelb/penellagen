@@ -23,6 +23,12 @@ const Container = styled.div`
     }
   }};
   margin-bottom: ${props => props.theme.spacing.titleMarginBottom};
+  p{
+    ${props => props.theme.typeBlock.subtitle}
+  }
+  @media screen and (max-width: 800px) {
+    margin-bottom: ${props => props.theme.spacing.titleMarginBottomMobile};
+  }
 `;
 
 function Title(

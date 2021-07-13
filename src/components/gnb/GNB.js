@@ -15,7 +15,7 @@ const Container = styled.div`
     props => `calc((100% - ${props.theme.spacing.liveArea})/2)`
   };
   @media screen and (max-width: 800px) {
-    
+    padding: 0px 12px;
   }
 `;
 

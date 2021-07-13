@@ -22,13 +22,17 @@ const theme = {
     // Unit for Spacing by Context
     liveArea: '1280px',
     sectionPadding: '160px',
+    sectionPaddingMobile: '80px',
     titleMarginBottom: '80px',
+    titleMarginBottomMobile: '48px',
     subSectionPadding: '48px',
+    subSectionPaddingMobile: '24px',
     contentMarginBottom1: '48px',
     contentMarginBottom2: '80px',
     headlineMarginBottom: '32px',
+    headlineMarginBottomMobile: '16px',
     subsectionMarginBottom: '160px',
-    horizonTitle: '214px',
+    horizonTitle: '180px',
     horizonContent: '400px',
   },
   layout: {
@@ -124,6 +128,12 @@ const theme = {
       font-family: AppleSDGothicNeoB;
       font-size: 16px;
       line-height: 28px;
+      letter-spacing: 0px;
+    `,
+    button: `
+      font-family: AppleSDGothicNeoB;
+      font-size: 14px;
+      line-height: 14px;
       letter-spacing: 0px;
     `,
     table: `

@@ -4,7 +4,9 @@ import styled from 'styled-components';
 import theme from '../assets/theme/theme';
 
 import Section from '../components/layout/Section';
-import Chart from '../components/Chart/Chart';
+import Chart from '../components/chart/Chart';
+
+import ButtonLink from '../components/button/ButtonLink';
 
 import Title from '../components/textContainer/Title';
 import SubTitleNumbering from '../components/textContainer/SubTitleNumbering';
@@ -14,12 +16,14 @@ import Exp from '../components/textContainer/Exp';
 import Table from '../components/table/Table';
 
 import img_bg from '../assets/img/background/img_bg_section4.jpg';
-import illust_penellagen from '../assets/img/illust/illust_penellagen.svg';
+// import illust_penellagen from '../assets/img/illust/illust_penellagen.svg';
+import illust_penellagen from '../assets/img/illust/illust_penellagen_png.png';
 import ic_logo_text_white from '../assets/img/logo/logo_text_white.svg';
-
+import img_bg_wave from '../assets/img/background/img_bg_wave.png';
 
 
 const Container = styled.div`
+  position: relative;
   width: 100%;
   background-image: url(${props => props.bgSrc});
   background-size: cover;
@@ -38,6 +42,7 @@ const Top = styled.div`
   @media screen and (max-width: 800px) {
     div{ 
       width: 100% !important;
+      margin-bottom: ${props => props.theme.spacing.contentMarginBottom1};
     }
   }
 `;
@@ -54,7 +59,13 @@ const TopRight = styled.div`
   .textLogo{
     width: 480px;
     height: auto;
+    @media screen and (max-width: 800px) {
+      width: calc(100% - 48px);
+      height: auto;
+    }
   }
+  
+  
 `;
 
 const VideoContainer = styled.div`
@@ -62,16 +73,27 @@ const VideoContainer = styled.div`
   height: 714px;
   background-color: #000;
   margin-bottom: ${props => props.theme.spacing.contentMarginBottom1};
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+    height: 240px;
+  }
 `;
 
 const ContentContainer = styled.div`
   background-color: ${props => props.theme.color.beige};
   padding: ${props => props.theme.spacing.subSectionPadding};
+  @media screen and (max-width: 800px) {
+    padding: ${props => props.theme.spacing.subSectionPaddingMobile};
+    width: calc(100% + 48px);
+    margin-left: -24px;
+  }
 `;
 
 const ContentSection = styled.div`
   width: 100%;
-  ${props => props.theme.layout.flexRow}
+  ${props => props.theme.layout.flexRowCol}
   margin-bottom: ${props => props.theme.spacing.subsectionMarginBottom};
 `;
 
@@ -79,6 +101,19 @@ const Col = styled.div`
   width: 50%;
   @media screen and (max-width: 800px) {
     width: 100%;
+  }
+  table{
+    margin-bottom: ${props => props.theme.spacing.contentMarginBottom1};
+  }
+`;
+
+const Col6 = styled.div`
+  width: 60%;
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
+  table{
+    margin-bottom: ${props => props.theme.spacing.contentMarginBottom1};
   }
 `;
 
@@ -89,8 +124,27 @@ const Penellagen = styled.div`
     width: 400px;
     height: 400px;
   }
+  @media screen and (max-width: 800px) {
+    img{
+      width: calc(100% - 48px);
+      height: auto;
+    }
+  }
 `;
 
+const BackgrondTransition = styled.img`
+  width: 100%;
+  height: auto;
+  margin-bottom: -24px;
+`;
+
+const TableContainer = styled.div`
+  @media screen and (max-width: 800px) {
+    margin-left: -24px;
+    width: calc(100% + 48px);
+    text-align: center;
+  }
+`;
 
 function Section4() {
 
@@ -122,6 +176,81 @@ function Section4() {
       label: '돈피콜라겐',
       value: 81
     }
+  ];
+
+  const tableData = [
+    [
+      {
+        value: '',
+        isHighlight: false
+      },
+      {
+        value: '증류수 \n 0.0%',
+        isHighlight: false
+      },
+      {
+        value: '페넬라겐 \n 0.3%',
+        isHighlight: false
+      },
+      {
+        value: '페넬라겐 \n 3.0%',
+        isHighlight: false
+      },
+    ],
+    [
+      {
+        value: '반응속도',
+        isHighlight: false
+      },
+      {
+        value: '0.00',
+        isHighlight: false
+      },
+      {
+        value: '0.00',
+        isHighlight: false
+      },
+      {
+        value: '0.00',
+        isHighlight: false
+      },
+    ],
+    [
+      {
+        value: '자극지수',
+        isHighlight: false
+      },
+      {
+        value: '0.00',
+        isHighlight: false
+      },
+      {
+        value: '0.00',
+        isHighlight: false
+      },
+      {
+        value: '0.00',
+        isHighlight: false
+      },
+    ],
+    [
+      {
+        value: '판정',
+        isHighlight: false
+      },
+      {
+        value: '0.00',
+        isHighlight: false
+      },
+      {
+        value: '0.00',
+        isHighlight: true
+      },
+      {
+        value: '0.00',
+        isHighlight: true
+      },
+    ],
   ];
 
   return (
@@ -222,31 +351,24 @@ function Section4() {
             </Col>
           </ContentSection>
           <ContentSection>
-            <Col>
+            <Col6>
               <SubTitle>
                 반응도 및 자극성 평가 <span>ICDRG 판정 기준</span>
               </SubTitle>
-              <table>
-                <tr>
-                  <th>Firstname</th>
-                  <th>Lastname</th>
-                  <th>Age</th>
-                </tr>
-                <tr>
-                  <td>Jill</td>
-                  <td>Smith</td>
-                  <td>50</td>
-                </tr>
-                <tr>
-                  <td>Eve</td>
-                  <td>Jackson</td>
-                  <td>94</td>
-                </tr>
-              </table>
+              <TableContainer>
+                {/* <Table data={tableData} /> */}
+              </TableContainer> 
+              <ButtonLink>
+                실험 & 기능성 데이터 다운로드
+              </ButtonLink>
+            </Col6>
+            <Col>
+
             </Col>
           </ContentSection>
         </ContentContainer>
       </Section>
+      <BackgrondTransition src={img_bg_wave} alt='' />
     </Container>
   )
 }

@@ -29,6 +29,7 @@ const Container = styled.div`
   width: 50%;
   padding-right: 80px;
   @media screen and (max-width: 800px) {
+    width: 100%;
     padding-right: 0px;
   }
 `;

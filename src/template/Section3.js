@@ -18,13 +18,12 @@ const Container = styled.div`
 const Top = styled.div`
   width: 100%;
   position: relative;
+  .video_pc{
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+  }
 `;
-
-// const Title = styled.div`
-//   ${props => props.theme.typeBlock.msgBig}
-//   color: ${props => props.theme.color.pinkBeige};
-//   margin-bottom: ${props => props.theme.spacing.titleMarginBottom};
-// `;
 
 const VideoBox = styled.div`
   position: absolute;
@@ -34,23 +33,26 @@ const VideoBox = styled.div`
   height: 112px;
   border-radius: 0px 0px 0px 32px;
   overflow: hidden;
+  @media screen and (max-width: 800px) {
+    position: static;
+    border-radius: 0px;
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const ContentBox = styled.div`
   width: 100%;
   ${props => props.theme.layout.flexRowCol}
   ${props => props.theme.typeBlock.body}
-  /* div:nth-child(1){
-    width: 50%
-  }
-  div:nth-child(2){
-    width: 50%
-  }
-  @media screen and (max-width: 800px) {
-    div{ 
-      width: 100% !important;
+  .video_mobile{
+    display: none;
+    @media screen and (max-width: 800px) {
+      display: inline-block !important;
+      margin-top: -64px;
+      margin-bottom: 24px;
     }
-  } */
+  }
 `;
 
 const Handle = styled.div`
@@ -71,7 +73,7 @@ function Section3() {
             Brand <br />
             Philosophy
           </Title>
-          <VideoBox>
+          <VideoBox className='video_pc'>
             <VideoBackground
               width={'100%'}
               height={'100%'}
@@ -92,6 +94,13 @@ function Section3() {
               이를 충족시킬 수 있는 유일한 기술력을 바탕으로 수준 높은 제품을 생산합니다.
           </p>
           </TextBox2to1>
+          <VideoBox className='video_mobile'>
+            <VideoBackground
+              width={'100%'}
+              height={'100%'}
+              videoSrc={video_bg}
+            />
+          </VideoBox>
           <TextBox2to1 color={'black'}>
             <p>
               페넬라겐의 핵심 가치는 뛰어난 기술력에 있습니다.

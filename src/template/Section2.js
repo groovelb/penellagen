@@ -20,12 +20,20 @@ const VideoBox = styled.div`
   width: 640px;
   height: 360px;
   margin-bottom: ${props => `calc(${props.theme.spacing.unit} * 9)`};
+  @media screen and (max-width: 800px) {
+    width: calc(100% - 48px);
+    height: auto;
+    margin-bottom: ${props => `calc(${props.theme.spacing.unit} * 6)`};
+  }
 `;
 
 const Subtitle = styled.p`
   ${props => props.theme.typeBlock.body}
   color: ${props => props.theme.color.pinkBeige};
   margin-bottom: ${props => `calc(${props.theme.spacing.unit} * 9)`};
+  @media screen and (max-width: 800px) {
+    margin-bottom: ${props => `calc(${props.theme.spacing.unit} * 4)`};
+  }
 `;
 
 const Msg1 = styled.div`
@@ -33,6 +41,9 @@ const Msg1 = styled.div`
   position: absolute;
   z-index: 9;
   ${props => props.theme.typeBlock.msgBig}
+  @media screen and (max-width: 800px) {
+    top: -32px;
+  }
 `;
 
 const Msg2 = styled.div`
@@ -40,6 +51,9 @@ const Msg2 = styled.div`
   position: absolute;
   z-index: 9;
   ${props => props.theme.typeBlock.msgBig}
+  @media screen and (max-width: 800px) {
+    bottom: -32px;
+  }
 `;
 
 const Exp = styled.div`
@@ -47,14 +61,22 @@ const Exp = styled.div`
   ${props => props.theme.typeBlock.body}
   color: ${props => props.theme.color.black};
   margin-bottom: ${props => `calc(${props.theme.spacing.unit} * 3)`};
+  @media screen and (max-width: 800px) {
+    text-align: left;
+  }
 `;
 
 const Logo = styled.img`
   margin: ${props => `calc(${props.theme.spacing.unit} * 8)`} 0;
+  @media screen and (max-width: 800px) {
+    margin: ${props => `calc(${props.theme.spacing.unit} * 3)`} 0;
+  }
 `;
 
 const TextIllust = styled.img`
-
+  @media screen and (max-width: 800px) {
+    width: calc(100% - 48px);
+  }
 `;
 
 function Section2() {

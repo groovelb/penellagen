@@ -11,6 +11,13 @@ const Container = styled.div`
   text-align: center;
 `;
 
+const Logo = styled.img`
+  @media screen and (max-width: 800px) {
+    width: calc(100% - 64px);
+    height: 48px;
+  }
+`;
+
 function Section1() {
   return (
     <Container>
@@ -20,7 +27,7 @@ function Section1() {
         videoSrc={video_bg}
       >
         <Section>
-          <img src={ic_logo_text_white} alt='' />
+          <Logo src={ic_logo_text_white} alt='' />
         </Section>
       </VideoBackground>
     </Container>

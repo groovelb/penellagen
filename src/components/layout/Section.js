@@ -30,6 +30,12 @@ const Container = styled.div`
         return props.theme.color.black;
     }
   }};
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    padding:${
+      props => props.theme.spacing.sectionPaddingMobile
+    } 24px;
+  }
 `;
 
 function Section({

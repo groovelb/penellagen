@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
+  width: 100%;
+  ${props => props.theme.layout.flexRow}
   ${props => props.theme.typeBlock.h1}
   color: ${props => {
     switch (props.color) {
@@ -48,7 +50,22 @@ const Num = styled.span`
   }};
   ${props => props.theme.typeBlock.numberingBig}
   margin-right: 24px;
+  @media screen and (max-width: 800px) {
+    padding-left: 12px;
+    width: 32px;
+    margin-left: -32px;
+    margin-right: 0px;
+  }
 `;
+
+const Title = styled.p`
+  padding-top: 20px;
+  @media screen and (max-width: 800px) {
+    padding-top: 10.6px;
+    padding-left: 8px;
+    width: calc(100%);
+  }
+`
 
 function SubTitleNumbering(
   {
@@ -62,7 +79,9 @@ function SubTitleNumbering(
       <Num colorNum={colorNum}>
         {num}
       </Num>
-      {children}
+      <Title>
+        {children}
+      </Title>
     </Container>
   )
 };
