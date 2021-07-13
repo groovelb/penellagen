@@ -70,8 +70,8 @@ const theme = {
       letter-spacing: 11px;
       @media screen and (max-width: 480px) {
         font-size: 48px;
-        line-height: 64px;
-        letter-spacing: 4.5px;
+        line-height: 56px;
+        letter-spacing: 2px;
       }
     `,
     msgMiddle: `
@@ -97,8 +97,8 @@ const theme = {
       line-height: 76px !important;
       letter-spacing: 0px;
       @media screen and (max-width: 480px) {
-        font-size: 48px !important;
-        line-height: 56px !important;
+        font-size: 44px !important;
+        line-height: 44px !important;
         letter-spacing: 4.5px !important;
       }
     `,
@@ -108,7 +108,7 @@ const theme = {
       line-height: 48px;
       letter-spacing: 0px;
       @media screen and (max-width: 480px) {
-        font-size: 28px;
+        font-size: 26px;
         line-height: 40px;
         letter-spacing: 0px;
       }

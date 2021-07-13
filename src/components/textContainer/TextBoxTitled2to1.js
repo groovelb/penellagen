@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   ${props => props.theme.typeBlock.body}
   color: ${props => {
     switch (props.bodyColor) {
@@ -61,7 +62,7 @@ const Title = styled.div`
   width: ${props => props.theme.spacing.horizonTitle};
   @media screen and (max-width: 800px) {
     width: 100% !important;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     margin-bottom: ${props => props.theme.spacing.headlineMarginBottom};
   }
 `;

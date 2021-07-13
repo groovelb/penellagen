@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   ${props => props.theme.typeBlock.h1}
+  position: relative;
   color: ${props => {
     switch (props.color) {
       case 'lightBeige':
@@ -22,11 +23,17 @@ const Container = styled.div`
         return props.theme.color.black;
     }
   }};
-  margin-bottom: ${props => props.theme.spacing.headlineMarginBottom};
+  margin-bottom: ${props => `calc(${props.theme.spacing.headlineMarginBottom} + 24px)`};
   span{
     margin-left: ${props => props.theme.spacing.medium};
     ${props => props.theme.typeBlock.body}
     color: ${props => props.theme.color.lightBeige};
+    @media screen and (max-width: 800px) {
+      position: absolute;
+      left: 0;
+      margin-left: 0;
+      bottom: -24px;
+    }
   }
 `;
 

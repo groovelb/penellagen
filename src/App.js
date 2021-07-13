@@ -97,6 +97,9 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${props => props.theme.color.pinkBeige} !important;
     border-color: ${props => props.theme.color.pinkBeige} !important;
   }
+  body{
+    overscroll-behavior-y: none;
+  }
 `;
 
 export default App;

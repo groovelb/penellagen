@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Section from '../../components/layout/Section';
 import theme from '../../assets/theme/theme';
+import useWindowSize from '../../hook/useWindowSize';
 
 import GNB from '../../components/gnb/GNB';
 import Section1 from '../../template/Section1';
@@ -18,6 +19,9 @@ const Container = styled.div`
 `;
 
 function Main() {
+  const windowSize = useWindowSize();
+  console.log(windowSize);
+
   return (
     <Container>
       <GNB />

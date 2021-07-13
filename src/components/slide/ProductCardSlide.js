@@ -68,7 +68,6 @@ function CardSlide({
   const [cardPadding, setCardPadding] = useState(20);
   const [slideWidth, setCardSlideWidth] = useState(0);
 
-  console.log(windowSize);
   useEffect(() => {
     // Set Mobile Component Size
     if(windowSize.width<=800){

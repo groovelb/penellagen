@@ -51,9 +51,8 @@ const Num = styled.span`
   ${props => props.theme.typeBlock.numberingBig}
   margin-right: 24px;
   @media screen and (max-width: 800px) {
-    padding-left: 12px;
+    padding-top: 6px;
     width: 32px;
-    margin-left: -32px;
     margin-right: 0px;
   }
 `;
@@ -63,7 +62,7 @@ const Title = styled.p`
   @media screen and (max-width: 800px) {
     padding-top: 10.6px;
     padding-left: 8px;
-    width: calc(100%);
+    width: calc(100% - 56px);
   }
 `
 
