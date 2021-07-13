@@ -146,7 +146,7 @@ const TableContainer = styled.div`
   }
 `;
 
-function Section4() {
+function Section4({refObject}) {
 
   const chartData1 = [
     {
@@ -254,7 +254,10 @@ function Section4() {
   ];
 
   return (
-    <Container bgSrc={img_bg}>
+    <Container
+      bgSrc={img_bg}
+      ref={refObject}
+    >
       <Section bgColor={''}>
         <Top>
           <Title color={'white'}>
@@ -355,9 +358,9 @@ function Section4() {
               <SubTitle>
                 반응도 및 자극성 평가 <span>ICDRG 판정 기준</span>
               </SubTitle>
-              {/* <TableContainer>
+              <TableContainer>
                 <Table data={tableData} />
-              </TableContainer>  */}
+              </TableContainer> 
               <ButtonLink>
                 실험 & 기능성 데이터 다운로드
               </ButtonLink>

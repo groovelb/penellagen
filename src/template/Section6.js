@@ -58,9 +58,9 @@ const Col = styled.div`
   }
 `;
 
-function Section6() {
+function Section6({refObject}) {
   return (
-    <Container>
+    <Container ref={refObject}>
       <Section bgColor='lightBeige'>
         <Title color={'black'}>
           Our Move

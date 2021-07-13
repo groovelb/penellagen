@@ -81,10 +81,10 @@ const prdList2 = [
   }
 ];
 
-function Section7() {
+function Section7({refObject}) {
 
   return (
-    <Container>
+    <Container ref={refObject}>
       <Section bgColor=''>
         <Title color={'black'}>
           Products

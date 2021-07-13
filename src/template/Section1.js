@@ -7,6 +7,7 @@ import video_bg from '../assets/video/video_bg_section1.mp4';
 import ic_logo_text_white from '../assets/img/logo/logo_text_white.svg';
 
 const Container = styled.div`
+  display: flex;
   width: 100%;
   text-align: center;
 `;
@@ -18,9 +19,9 @@ const Logo = styled.img`
   }
 `;
 
-function Section1() {
+function Section1({refObject}) {
   return (
-    <Container>
+    <Container ref={refObject}>
       <VideoBackground
         width={'100%'}
         height={'auto'}

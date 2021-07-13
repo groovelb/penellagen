@@ -79,9 +79,9 @@ const TextIllust = styled.img`
   }
 `;
 
-function Section2() {
+function Section2({refObject}) {
   return (
-    <Container>
+    <Container ref={refObject}>
       <Section>
         <Subtitle>
           당신의 바다, 당신의 항해

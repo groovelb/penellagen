@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import ic_logo_black from '../../assets/img/logo/logo_black.svg';
+import ic_logo_white from '../../assets/img/logo/logo_white.svg';
 
 const Container = styled.div`
   position: fixed;
@@ -14,14 +15,23 @@ const Container = styled.div`
   padding:0 ${
     props => `calc((100% - ${props.theme.spacing.liveArea})/2)`
   };
+  color: ${props => {
+    switch (props.bgTheme) {
+      case 'dark':
+        return props.theme.color.white;
+      case 'light':
+        return props.theme.color.black;
+    }
+  }};
+  transition: color 0.25s ease-in-out;
   @media screen and (max-width: 800px) {
     padding: 0px 12px;
   }
 `;
 
 const Logo = styled.div`
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   ${ props => props.theme.layout.flexCol }
   ${ props => props.theme.layout.flexCenter }
 `;
@@ -55,11 +65,14 @@ const MenuList = [
   'Contact'
 ];
 
-function GNB(){
+function GNB(
+  {bgTheme}
+){
+  // console.log(bgTheme);
   return (
-    <Container>
+    <Container bgTheme={bgTheme}>
       <Logo>
-        <img src={ic_logo_black} alt='' />
+        <img src={bgTheme==='light'?ic_logo_black:ic_logo_white} alt='' />
       </Logo>
       <MenuContainer>
         {
@@ -70,7 +83,7 @@ function GNB(){
           )
         }
       </MenuContainer>
-      <Lang>
+      <Lang bgTheme={bgTheme}>
         KR
       </Lang>
     </Container>

@@ -28,9 +28,9 @@ const ContentSection = styled.div`
 `;
 
 
-function Section5() {
+function Section5({refObject}) {
   return (
-    <Container>
+    <Container ref={refObject}>
       <Section>
         <Title color={'white'}>
           Sustainability <br />

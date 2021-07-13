@@ -64,9 +64,9 @@ const Handle = styled.div`
   overflow: hidden;
 `;
 
-function Section3() {
+function Section3({refObject}) {
   return (
-    <Container>
+    <Container ref={refObject}>
       <Section>
         <Top>
           <Title color={'pinkBeige'}>

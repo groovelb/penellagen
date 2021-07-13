@@ -81,7 +81,7 @@ const ActionBar = styled.div`
   }
 `;
 
-function Section8({ }) {
+function Section8({refObject}) {
 
   // Form Data
   const [lastName , setLastName] = useState('');
@@ -112,7 +112,7 @@ function Section8({ }) {
   }
   
   return (
-    <Container>
+    <Container ref={refObject}>
       <Section>
         <ContentBox>
           <Col2
