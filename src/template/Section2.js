@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import Section from '../components/layout/Section';
+import Title from '../components/textContainer/Title';
 import VideoBackground from '../components/videoBackground/VideoBackground';
 import video_bg from '../assets/video/video_square_section2.mp4';
 import ic_logo_black from '../assets/img/logo/logo_black.svg';
@@ -25,6 +26,25 @@ const VideoBox = styled.div`
     height: auto;
     margin-bottom: ${props => `calc(${props.theme.spacing.unit} * 6)`};
   }
+  .msg1{
+    top: -64px;
+    position: absolute;
+    z-index: 9;
+    margin-bottom: 0;
+    @media screen and (max-width: 800px) {
+      top: -32px;
+    }
+  }
+  .msg2{
+    bottom: -64px;
+    position: absolute;
+    z-index: 9;
+    margin-bottom: 0;
+    ${props => props.theme.typeBlock.msgBig}
+    @media screen and (max-width: 800px) {
+      bottom: -32px;
+    }
+  }
 `;
 
 const Subtitle = styled.p`
@@ -36,25 +56,6 @@ const Subtitle = styled.p`
   }
 `;
 
-const Msg1 = styled.div`
-  top: -64px;
-  position: absolute;
-  z-index: 9;
-  ${props => props.theme.typeBlock.msgBig}
-  @media screen and (max-width: 800px) {
-    top: -32px;
-  }
-`;
-
-const Msg2 = styled.div`
-  bottom: -64px;
-  position: absolute;
-  z-index: 9;
-  ${props => props.theme.typeBlock.msgBig}
-  @media screen and (max-width: 800px) {
-    bottom: -32px;
-  }
-`;
 
 const Exp = styled.div`
   text-align: center;
@@ -79,7 +80,10 @@ const TextIllust = styled.img`
   }
 `;
 
-function Section2({refObject}) {
+function Section2({
+  refObject,
+  isTrigger
+}) {
   return (
     <Container ref={refObject}>
       <Section>
@@ -87,17 +91,27 @@ function Section2({refObject}) {
           당신의 바다, 당신의 항해
         </Subtitle>
         <VideoBox>
-          <Msg1>
+          <Title 
+            color={'black'}
+            isTrigger={isTrigger}
+            index={0}
+            className={'msg1'}
+          >
             Brand
-          </Msg1>
+          </Title>
           <VideoBackground
             width={'100%'}
             height={'100%'}
             videoSrc={video_bg}
           />
-          <Msg2>
+          <Title
+            color={'black'}
+            isTrigger={isTrigger}
+            index={1}
+            className={'msg2'}
+          >
             Story
-          </Msg2>
+          </Title>
         </VideoBox>
         <Exp>
           당신은 좋은 화장품 원료를 찾아 바다를 항해합니다. <br/>

@@ -29,15 +29,25 @@ const Container = styled.div`
   @media screen and (max-width: 800px) {
     margin-bottom: ${props => props.theme.spacing.titleMarginBottomMobile};
   }
+
+  // Transition
+  margin-top: ${props => props.isTrigger?'0px':'0px'};
+  transition: margin-top 1s ease-out;
 `;
 
 function Title(
   {
     children,
-    color
+    color,
+    className,
+    isTrigger
   }) {
   return (
-    <Container color={color}>
+    <Container
+      color={color}
+      className={className}
+      isTrigger={isTrigger}
+    >
       {children}
     </Container>
   )

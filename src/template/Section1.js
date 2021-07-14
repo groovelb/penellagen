@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-
+import {isMobile} from 'react-device-detect';
 import Section from '../components/layout/Section';
 import VideoBackground from '../components/videoBackground/VideoBackground';
-import video_bg from '../assets/video/video_bg_section1.mp4';
+import video_bg_section1_pc from '../assets/video/video_bg_section1_pc.mp4';
+import video_bg_section1_mobile from '../assets/video/video_bg_section1_mobile.mp4';
 
 import ic_logo_text_white from '../assets/img/logo/logo_text_white.svg';
 
@@ -19,13 +20,16 @@ const Logo = styled.img`
   }
 `;
 
-function Section1({refObject}) {
+function Section1({
+  refObject,
+  isTrigger
+}) {
   return (
     <Container ref={refObject}>
       <VideoBackground
         width={'100%'}
         height={'auto'}
-        videoSrc={video_bg}
+        videoSrc={isMobile?video_bg_section1_mobile:video_bg_section1_pc}
       >
         <Section>
           <Logo src={ic_logo_text_white} alt='' />
