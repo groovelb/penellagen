@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Section from '../components/layout/Section';
 import Title from '../components/textContainer/Title';
+import Exp from '../components/textContainer/Exp';
 import TextField from '../components/form/TextField';
 import CheckBox from '../components/form/CheckBox';
 import Button from '../components/button/Button';
@@ -10,6 +11,7 @@ import TextLink from '../components/button/TextLink';
 
 // import illust_penellagen from '../assets/img/illust/illust_penellagen.svg';
 import illust_penellagen from '../assets/img/illust/illust_penellagen_png.png';
+import illust_text_section2 from '../assets/img/illust/illust_text_section2.svg';
 
 const Container = styled.div`
   width: 100%;
@@ -80,6 +82,13 @@ const ActionBar = styled.div`
     }
   }
 `;
+
+const TextIllust = styled.div`
+  margin: 124px 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+`
 
 function Section8({
   refObject,
@@ -224,8 +233,13 @@ function Section8({
             개인정보 보호 정책 보기
           </TextLink>
         </ActionBar>
+        <TextIllust>
+          <img src={illust_text_section2} alt='' />
+        </TextIllust>
+        <Exp color={'pinkBeige'}>
+          (주)스타스테크 STAR’s TECH   대표 양승찬   서울특별시 구로구 디지털로 30길 28, 마리오타워 1203호 08389   사업자등록번호 853-87-00953
+        </Exp>
       </Section>
-
     </Container>
   )
 }

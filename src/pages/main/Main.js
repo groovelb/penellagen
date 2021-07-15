@@ -18,9 +18,25 @@ import Section6 from '../../template/Section6';
 import Section7 from '../../template/Section7';
 import Section8 from '../../template/Section8';
 
+// Media
+import illust_handle_light from '../../assets/img/illust/illust_handle_light.svg';
+import illust_handle_dark from '../../assets/img/illust/illust_handle_light.svg';
+
+
 const Container = styled.div`
   width: 100%;
   background-color: ${theme.color.bg};
+`;
+
+const Handle = styled.div`
+  position: fixed;
+  z-index: 99;
+  bottom: -132px;
+  left: calc((100% - 264px)/2);
+  width: 264px;
+  height: 264px;
+  transform: ${props => `rotate(${props.progress*30*360}deg)`};
+  transition: transform 0.5s ease;
 `;
 
 function Main() {
@@ -29,9 +45,11 @@ function Main() {
   const scrollY = useScrollPosition(60);
   const [isScrollStart, setIsScrollStart] = useState(false);
   const scrollOffset = isMobile ? 200 : 400;
+  const [progress, setProgress] = useState(0);
 
 
   // Intit Section Ref
+  const bodyRef = useRef(null);
   const refSection1 = useRef(null);
   const refSection2 = useRef(null);
   const refSection3 = useRef(null);
@@ -107,27 +125,28 @@ function Main() {
       section1: true
     });
 
+    // Prevent Ref Pre-lading
     if (!isScrollStart && scrollY < 10) {
       setIsScrollStart(true);
     }
 
     if (isScrollStart) {
+      if(bodyRef.current!==null){
+        setProgress(scrollY/bodyRef.current.scrollHeight);
+      }
       if (refSection1.current.offsetTop <= scrollY && scrollY <= (refSection2.current.offsetTop - scrollOffset)) {
-        console.log('section1');
         setBgTheme(sectionList[0].theme);
         setTriggerList({
           ...triggerList,
           section1: true
         });
       } else if ((refSection2.current.offsetTop - scrollOffset) < scrollY && scrollY < refSection3.current.offsetTop - scrollOffset) {
-        console.log('section2');
         setBgTheme(sectionList[1].theme);
         setTriggerList({
           ...triggerList,
           section2: true
         });
       } else if (refSection3.current.offsetTop - scrollOffset < scrollY && scrollY < refSection4.current.offsetTop - scrollOffset) {
-        console.log('section3');
         setBgTheme(sectionList[2].theme);
         setTriggerList({
           ...triggerList,
@@ -143,7 +162,6 @@ function Main() {
         console.log(refSection4Chart1.current.offsetTop);
         // Chart Trigger Check
         if(refSection3.current.offsetTop + refSection4Chart1.current.offsetTop < scrollY){
-          console.log('chart1!');
           setTriggerList({
             ...triggerList,
             chart1Section4: true
@@ -151,7 +169,6 @@ function Main() {
         }
 
         if(refSection3.current.offsetTop + refSection4Chart2.current.offsetTop < scrollY){
-          console.log('chart2!');
           setTriggerList({
             ...triggerList,
             chart2Section4: true
@@ -159,28 +176,24 @@ function Main() {
         }
 
       } else if (refSection5.current.offsetTop - scrollOffset < scrollY && scrollY < refSection6.current.offsetTop - scrollOffset) {
-        console.log('section5');
         setBgTheme(sectionList[4].theme);
         setTriggerList({
           ...triggerList,
           section5: true
         });
       } else if (refSection6.current.offsetTop - scrollOffset < scrollY && scrollY < refSection7.current.offsetTop - scrollOffset) {
-        console.log('section6');
         setBgTheme(sectionList[5].theme);
         setTriggerList({
           ...triggerList,
           section6: true
         });
       } else if (refSection7.current.offsetTop - scrollOffset < scrollY && scrollY < refSection8.current.offsetTop - scrollOffset) {
-        console.log('section7');
         setBgTheme(sectionList[6].theme);
         setTriggerList({
           ...triggerList,
           section7: true
         });
       } else if (refSection8.current.offsetTop < scrollY) {
-        console.log('section8');
         setTriggerList({
           ...triggerList,
           section8: true
@@ -191,8 +204,11 @@ function Main() {
   }, [scrollY]);
 
   return (
-    <Container>
+    <Container ref={bodyRef}>
       <GNB bgTheme={bgTheme} />
+      <Handle progress={progress}>
+        <img src={bgTheme==='light'?illust_handle_dark:illust_handle_light} alt='' />
+      </Handle>
       <Section1
         refObject={refSection1}
         isTrigger={triggerList['section1']}

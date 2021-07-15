@@ -26,7 +26,7 @@ import img_bg_wave from '../assets/img/background/img_bg_wave.png';
 const Container = styled.div`
   position: relative;
   width: 100%;
-  background-image: url(${props => props.bgSrc});
+  background-color: ${props => props.theme.color.beige};
   background-size: cover;
   color: ${props => props.theme.color.white};
 `;
@@ -34,11 +34,11 @@ const Container = styled.div`
 const Top = styled.div`
   width: 100%;
   ${props => props.theme.layout.flexRowCol}
-  div:nth-child(1){
-    width: 50%
+  .left{
+    width: calc(100% - 480px);
   }
-  div:nth-child(2){
-    width: 50%
+  .right{
+    width: 480px;
   }
   @media screen and (max-width: 800px) {
     div{ 
@@ -263,7 +263,8 @@ function Section4({
 
   return (
     <Container
-      bgSrc={img_bg}
+      color
+      // bgSrc={img_bg}
       ref={refObject}
     >
       <Section bgColor={''}>
@@ -271,6 +272,7 @@ function Section4({
           <Title
             color={'white'}
             isTrigger={isTrigger}
+            className={'left'}
           >
             <ToTop
               isTrigger={isTrigger}
@@ -279,13 +281,16 @@ function Section4({
               Penellagen <br />
               Skin <br />
               Technology
+              <Exp color='white'>
+                Penetration (피부침투) + Collagen (콜라겐) = Penellagen
+              </Exp>
             </ToTop>
           </Title>
-          <TopRight>
+          <TopRight className={'right'}>
             <ToTop
               isTrigger={isTrigger}
               index={0}
-              style={{textAlign:'center', width: '100%'}}
+              style={{ textAlign: 'center', width: '100%' }}
             >
               <img className={'penellagen'} src={illust_penellagen} alt='' />
               <img className={'textLogo'} src={ic_logo_text_white} alt='' />

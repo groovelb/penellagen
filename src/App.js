@@ -100,6 +100,9 @@ const GlobalStyle = createGlobalStyle`
   body{
     overscroll-behavior-y: none;
   }
+  input{
+    outline: none;
+  }
 `;
 
 export default App;

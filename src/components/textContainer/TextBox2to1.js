@@ -27,7 +27,7 @@ const Container = styled.div`
   margin-bottom: ${props => props.theme.spacing.contentMarginBottom2};
   ${props => props.theme.layout.flexRowCol}
   width: 50%;
-  padding-right: 80px;
+  padding-right: 124px;
   @media screen and (max-width: 800px) {
     width: 100%;
     padding-right: 0px;

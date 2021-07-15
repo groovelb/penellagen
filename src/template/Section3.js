@@ -11,9 +11,6 @@ import ToLeft from '../components/motion/ToLeft';
 import ToRight from '../components/motion/ToRight';
 import ToTop from '../components/motion/ToTop';
 
-
-import illust_handle from '../assets/img/illust/illust_handle_light_pink.svg';
-
 const Container = styled.div`
   width: 100%;
   position: relative;
@@ -66,15 +63,6 @@ const ContentBox = styled.div`
       margin-bottom: 24px;
     }
   }
-`;
-
-const Handle = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: calc((100% - 264px)/2);
-  width: 264px;
-  height: 132px;
-  overflow: hidden;
 `;
 
 function Section3({
@@ -162,9 +150,6 @@ function Section3({
           </TextBox2to1>
         </ContentBox>
       </Section>
-      <Handle>
-        <img src={illust_handle} alt='' />
-      </Handle>
     </Container>
   )
 }

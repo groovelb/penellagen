@@ -39,11 +39,15 @@ const Logo = styled.div`
 const MenuContainer = styled.div`
   ${ props => props.theme.layout.flexRow }
   div{
-    margin-right: 48px;
+    margin-right: 80px;
   }
   @media screen and (max-width: 800px) {
     display: none;
   }
+`;
+
+const Menu = styled.div`
+  cursor: pointer;
 `;
 
 const Lang = styled.div`
@@ -58,8 +62,8 @@ const Lang = styled.div`
 `;
 
 const MenuList = [
-  'About',
-  'Technology',
+  'About Penellagen',
+  'Skin Technology',
   'Sustainability',
   'Products',
   'Contact'
@@ -77,9 +81,9 @@ function GNB(
       <MenuContainer>
         {
           MenuList.map((menu,i) => 
-            <div key={i}>
+            <Menu key={i}>
               {menu}
-            </div>
+            </Menu>
           )
         }
       </MenuContainer>

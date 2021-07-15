@@ -9,8 +9,7 @@ import CardProduct from '../components/card/CardProduct';
 import ToTop from '../components/motion/ToTop';
 
 import img_prd from '../assets/img/prd/img_prd_name.jpg';
-import ic_next from '../assets/img/icon/ic_arrow_next_black.svg';
-import ic_prev from '../assets/img/icon/ic_arrow_prev_black.svg';
+import illust_text_section4 from '../assets/img/illust/illust_text_section4.svg';
 
 const Container = styled.div`
   width: 100%;
@@ -26,6 +25,20 @@ const ContentBox = styled.div`
   margin-bottom: ${props => props.theme.spacing.contentMarginBottom2};
 `;
 
+const BgImage = styled.div`
+  width: ${props => props.theme.spacing.liveArea};
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: ${props => `calc((100% - ${props.theme.spacing.liveArea})/2)`};
+  ${props => props.theme.layout.flexCol}
+  ${props => props.theme.layout.flexCenter}
+  img{
+    margin-top: 200px;
+    width: 100%;
+    height: auto;
+  }
+`;
 const prdList1 = [
   {
     img: img_prd,
@@ -89,6 +102,9 @@ function Section7({
   return (
     <Container ref={refObject}>
       <Section bgColor=''>
+        <BgImage>
+          <img src={illust_text_section4} alt='' />
+        </BgImage>
         <Title
           color={'black'}
           isTrigger={isTrigger}

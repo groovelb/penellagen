@@ -17,6 +17,8 @@ const Container = styled.div`
 `;
 
 const Logo = styled.img`
+  width: 564px;
+  height: auto;
   @media screen and (max-width: 800px) {
     width: calc(100% - 64px);
     height: 48px;

@@ -25,10 +25,10 @@ const Label = styled.label`
     border-right: none;
     content: "";
     height: 6px;
-    left: 7px;
+    left: 6px;
     opacity: 1;
     position: absolute;
-    top: 8px;
+    top: 7px;
     transform: rotate(-45deg);
     width: 12px;
   }
