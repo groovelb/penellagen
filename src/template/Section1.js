@@ -2,9 +2,12 @@ import styled from 'styled-components';
 import {isMobile} from 'react-device-detect';
 import Section from '../components/layout/Section';
 import VideoBackground from '../components/videoBackground/VideoBackground';
+import ToTop from '../components/motion/ToTop';
+
 import video_bg_section1_pc from '../assets/video/video_bg_section1_pc.mp4';
 import video_bg_section1_mobile from '../assets/video/video_bg_section1_mobile.mp4';
 
+import useWindowSize from '../hook/useWindowSize';
 import ic_logo_text_white from '../assets/img/logo/logo_text_white.svg';
 
 const Container = styled.div`
@@ -24,15 +27,24 @@ function Section1({
   refObject,
   isTrigger
 }) {
+
+  const windowSize = useWindowSize();
+
   return (
     <Container ref={refObject}>
       <VideoBackground
-        width={'100%'}
-        height={'auto'}
+        width={windowSize.width}
+        height={windowSize.height}
+        isFilter={true}
         videoSrc={isMobile?video_bg_section1_mobile:video_bg_section1_pc}
       >
         <Section>
-          <Logo src={ic_logo_text_white} alt='' />
+          <ToTop
+            isTrigger={isTrigger}
+            index={0}
+          >
+            <Logo src={ic_logo_text_white} alt='' />
+          </ToTop>
         </Section>
       </VideoBackground>
     </Container>

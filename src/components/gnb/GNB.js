@@ -76,8 +76,8 @@ function GNB(
       </Logo>
       <MenuContainer>
         {
-          MenuList.map((menu) => 
-            <div>
+          MenuList.map((menu,i) => 
+            <div key={i}>
               {menu}
             </div>
           )

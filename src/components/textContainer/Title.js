@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
+  position: relative;
   ${props => props.theme.typeBlock.msgBig}
   color: ${props => {
     switch (props.color) {
@@ -29,10 +30,6 @@ const Container = styled.div`
   @media screen and (max-width: 800px) {
     margin-bottom: ${props => props.theme.spacing.titleMarginBottomMobile};
   }
-
-  // Transition
-  margin-top: ${props => props.isTrigger?'0px':'0px'};
-  transition: margin-top 1s ease-out;
 `;
 
 function Title(
@@ -40,13 +37,11 @@ function Title(
     children,
     color,
     className,
-    isTrigger
   }) {
   return (
     <Container
       color={color}
       className={className}
-      isTrigger={isTrigger}
     >
       {children}
     </Container>

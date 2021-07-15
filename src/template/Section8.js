@@ -81,7 +81,10 @@ const ActionBar = styled.div`
   }
 `;
 
-function Section8({refObject}) {
+function Section8({
+  refObject,
+  isTrigger
+}) {
 
   // Form Data
   const [lastName , setLastName] = useState('');
@@ -122,7 +125,9 @@ function Section8({refObject}) {
               justifyContent: 'space-between'
             }}
           >
-            <Title color='black'>
+            <Title
+            isTrigger={isTrigger}
+            color='black'>
               Contact Us
             </Title>
             <Col2>

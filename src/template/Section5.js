@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import theme from '../assets/theme/theme';
 
+import ToTop from '../components/motion/ToTop';
+
 import Section from '../components/layout/Section';
 import Title from '../components/textContainer/Title';
-import SubTitleNumbering from '../components/textContainer/SubTitleNumbering';
-import SubTitle from '../components/textContainer/SubTitle';
 import TextBoxTitled2to1 from '../components/textContainer/TextBoxTitled2to1';
 import img_bg_transition_green_beige from '../assets/img/background/img_bg_transition_green_beige.jpg';
 
@@ -28,16 +28,30 @@ const ContentSection = styled.div`
 `;
 
 
-function Section5({refObject}) {
+function Section5({
+    refObject,
+    isTrigger
+  }) {
   return (
     <Container ref={refObject}>
       <Section>
-        <Title color={'white'}>
-          Sustainability <br />
-          to Protect <br />
-          Our Sea
+        <Title
+          color={'white'}
+        >
+          <ToTop
+            isTrigger={isTrigger}
+            index={0}
+          >
+            Sustainability <br />
+            to Protect <br />
+            Our Sea
+          </ToTop>
         </Title>
-        <ContentSection>
+        <ToTop
+            isTrigger={isTrigger}
+            index={1}
+          >
+          <ContentSection>
           <TextBoxTitled2to1
             title={'믿기지 \n 않는 재생력 \n 불가사리'}
             titleColor={'greenTea'}
@@ -71,6 +85,7 @@ function Section5({refObject}) {
             </p>
           </TextBoxTitled2to1>
         </ContentSection>
+        </ToTop>
       </Section>
       <img src={img_bg_transition_green_beige} alt='' />
     </Container>

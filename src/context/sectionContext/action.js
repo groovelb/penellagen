@@ -1,0 +1,1 @@
+export const SECTION_CHANGE = 'section changed';

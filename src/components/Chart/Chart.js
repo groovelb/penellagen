@@ -14,17 +14,23 @@ const Label = styled.div`
   width: 80px;
   margin-right: 24px;
   color: ${props => props.theme.color.white};
+  opacity: ${props => props.isTrigger?1:0.3};
+  transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-delay: ${props => `${props.index*0.3 + 0.5}s`};
 `;
 
 const Bar = styled.div`
   height: 32px;
   border-radius: 16px;
-  width: ${props => `calc(${props.value / props.maxValue}*(100% - 104px))`};
-  min-width: 80px;
+  width: ${props => props.isTrigger?`calc(${props.value / props.maxValue}*(100% - 104px))`:0};
+  opacity: ${props => props.isTrigger?1:0.3};
+  transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-delay: ${props => `${props.index*0.3 + 0.5}s`};
+  min-width: 48px;
   ${props => props.theme.layout.flexRow}
   ${props => props.theme.layout.alignCenter}
   justify-content: flex-end;
-  padding-right: 12px;
+  padding-right: 8px;
 
   background-color: ${props => {
     switch (props.bgColor) {
@@ -97,15 +103,20 @@ const BarZero = styled.div`
 
 function Chart({
   data,
-  maxValue
+  maxValue,
+  refObject,
+  isTrigger
 }) {
 
   return (
-    <Container>
+    <Container ref={refObject}>
       {
         data.map((datum, i) => (
           <BarContainer key={i}>
-            <Label>
+            <Label
+              isTrigger={isTrigger}
+              index={i}
+            >
               {datum.label}
             </Label>
             {
@@ -118,6 +129,8 @@ function Chart({
                 color={i === 0 ? 'white' : 'beige'}
                 value={datum.value}
                 maxValue={maxValue}
+                isTrigger={isTrigger}
+                index={i}
               >
                 {datum.value + '%'}
               </Bar>

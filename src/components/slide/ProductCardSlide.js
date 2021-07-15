@@ -116,11 +116,13 @@ function CardSlide({
           width={slideWidth + 'px'}
         >
           {
-            data.map(prd => (
+            data.map((prd,i) => (
               <CardProduct 
                 width={cardWidth}
                 height={cardHeight}
-                data={prd} />
+                data={prd}
+                key={i}
+              />
             ))
           }
         </Slide>

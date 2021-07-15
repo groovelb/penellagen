@@ -8,6 +8,7 @@ import Chart from '../components/chart/Chart';
 
 import ButtonLink from '../components/button/ButtonLink';
 
+import ToTop from '../components/motion/ToTop';
 import Title from '../components/textContainer/Title';
 import SubTitleNumbering from '../components/textContainer/SubTitleNumbering';
 import SubTitle from '../components/textContainer/SubTitle';
@@ -146,7 +147,14 @@ const TableContainer = styled.div`
   }
 `;
 
-function Section4({refObject}) {
+function Section4({
+  refObject,
+  isTrigger,
+  refChart1,
+  refChart2,
+  isChart1Trigger,
+  isChart2Trigger
+}) {
 
   const chartData1 = [
     {
@@ -260,14 +268,28 @@ function Section4({refObject}) {
     >
       <Section bgColor={''}>
         <Top>
-          <Title color={'white'}>
-            Penellagen <br />
-            Skin <br />
-            Technology
+          <Title
+            color={'white'}
+            isTrigger={isTrigger}
+          >
+            <ToTop
+              isTrigger={isTrigger}
+              index={0}
+            >
+              Penellagen <br />
+              Skin <br />
+              Technology
+            </ToTop>
           </Title>
           <TopRight>
-            <img className={'penellagen'} src={illust_penellagen} alt='' />
-            <img className={'textLogo'} src={ic_logo_text_white} alt='' />
+            <ToTop
+              isTrigger={isTrigger}
+              index={0}
+              style={{textAlign:'center', width: '100%'}}
+            >
+              <img className={'penellagen'} src={illust_penellagen} alt='' />
+              <img className={'textLogo'} src={ic_logo_text_white} alt='' />
+            </ToTop>
           </TopRight>
         </Top>
         <VideoContainer>
@@ -303,6 +325,8 @@ function Section4({refObject}) {
               <Chart
                 data={chartData1}
                 maxValue={550}
+                refObject={refChart1}
+                isTrigger={isChart1Trigger}
               />
               <Exp color='lightBeige'>
                 * 인공피부 피부 투과율(SKIN PAMPA Assay)
@@ -342,6 +366,8 @@ function Section4({refObject}) {
               <Chart
                 data={chartData2}
                 maxValue={100}
+                refObject={refChart2}
+                isTrigger={isChart2Trigger}
               />
               <Exp color='lightBeige'>
                 * 0.2, 0.4, 0.6, 0.8, 1.0mg/mL 투여시, HDF 세포 대상 MTT Assay 결과 평균값
@@ -360,7 +386,7 @@ function Section4({refObject}) {
               </SubTitle>
               <TableContainer>
                 <Table data={tableData} />
-              </TableContainer> 
+              </TableContainer>
               <ButtonLink>
                 실험 & 기능성 데이터 다운로드
               </ButtonLink>

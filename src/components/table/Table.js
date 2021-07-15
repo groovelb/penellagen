@@ -29,10 +29,16 @@ function Table({data}){
     <Container>
       {
         data.map((row,i) => 
-          <Tr isHeader={i===0}>
+          <Tr
+            key={i}
+            isHeader={i===0}
+          >
             {
-              row.map((col) =>
-                <Td isHighlight={col.isHighlight}>
+              row.map((col,j) =>
+                <Td
+                  isHighlight={col.isHighlight}
+                  key={j}
+                >
                   {col.value}
                 </Td>
               )

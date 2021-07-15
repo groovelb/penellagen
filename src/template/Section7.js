@@ -6,6 +6,7 @@ import Title from '../components/textContainer/Title';
 import SubTitle from '../components/textContainer/SubTitle';
 import CardProduct from '../components/card/CardProduct';
 
+import ToTop from '../components/motion/ToTop';
 
 import img_prd from '../assets/img/prd/img_prd_name.jpg';
 import ic_next from '../assets/img/icon/ic_arrow_next_black.svg';
@@ -81,29 +82,59 @@ const prdList2 = [
   }
 ];
 
-function Section7({refObject}) {
-
+function Section7({
+  refObject,
+  isTrigger
+}) {
   return (
     <Container ref={refObject}>
       <Section bgColor=''>
-        <Title color={'black'}>
-          Products
+        <Title
+          color={'black'}
+          isTrigger={isTrigger}
+        >
+          <ToTop
+            isTrigger={isTrigger}
+            index={0}
+          >
+            Products
+          </ToTop>
         </Title>
         <ContentBox>
           <SubTitle color={'black'}>
-            브랜드 제품
+            <ToTop
+              isTrigger={isTrigger}
+              index={1}
+            >
+              브랜드 제품
+            </ToTop>
           </SubTitle>
-          <ProductCardSlide
-            data={prdList1}
-          />
+          <ToTop
+            isTrigger={isTrigger}
+            index={2}
+          >
+            <ProductCardSlide
+              data={prdList1}
+            />
+          </ToTop>
         </ContentBox>
         <ContentBox>
           <SubTitle color={'black'}>
-            병의원 제품
+            <ToTop
+              isTrigger={isTrigger}
+              index={3}
+            >
+              병의원 제품
+            </ToTop>
           </SubTitle>
-          <ProductCardSlide
-            data={prdList2}
-          />
+          <ToTop
+            isTrigger={isTrigger}
+            index={3}
+          >
+            <ProductCardSlide
+              data={prdList2}
+            />
+          </ToTop>   
         </ContentBox>
       </Section>
     </Container>

@@ -7,6 +7,9 @@ const Container = styled.div`
   display: flex;
   position: relative;
   width: 100%;
+  video{
+    object-fit: cover;
+  }
   :after{
     content: '';
     position: absolute;
@@ -14,7 +17,7 @@ const Container = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.24);
+    background-color: ${props => props.isFilter?'rgba(0,0,0,0.24)':'rgba(0,0,0,0)'};
     z-index: 9;
   }
 `;
@@ -35,10 +38,11 @@ function VideoBackground({
     videoSrc,
     width,
     height,
-    children
+    children,
+    isFilter
   }){
   return(
-    <Container>
+    <Container isFilter={isFilter}>
       <ReactPlayer
         url={videoSrc}
         playing
