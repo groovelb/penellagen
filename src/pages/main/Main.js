@@ -35,7 +35,7 @@ const Handle = styled.div`
   left: calc((100% - 264px)/2);
   width: 264px;
   height: 264px;
-  transform: ${props => `rotate(${props.progress*30*360}deg)`};
+  transform: ${props => `rotate(${props.progress * 30 * 360}deg)`};
   transition: transform 0.5s ease;
 `;
 
@@ -116,6 +116,18 @@ function Main() {
     }
   );
 
+  // Init Section Anchor List
+  const [anchorlist, setAnchorList] = useState({
+    section1: 0,
+    section2: 0,
+    section3: 0,
+    section4: 0,
+    section5: 0,
+    section6: 0,
+    section7: 0,
+    section8: 0,
+  });
+
   const [bgTheme, setBgTheme] = useState(sectionList[0].theme);
 
   // Comparing Scroll Y and Each Ref Position
@@ -124,15 +136,26 @@ function Main() {
       ...triggerList,
       section1: true
     });
-
+    
+    setAnchorList({
+      section1: refSection1.current.offsetTop,
+      section2: refSection2.current.offsetTop,
+      section3: refSection3.current.offsetTop,
+      section4: refSection4.current.offsetTop,
+      section5: refSection5.current.offsetTop,
+      section6: refSection6.current.offsetTop,
+      section7: refSection7.current.offsetTop,
+      section8: refSection8.current.offsetTop,
+    })
     // Prevent Ref Pre-lading
     if (!isScrollStart && scrollY < 10) {
       setIsScrollStart(true);
+      console.log(anchorlist);
     }
 
     if (isScrollStart) {
-      if(bodyRef.current!==null){
-        setProgress(scrollY/bodyRef.current.scrollHeight);
+      if (bodyRef.current !== null) {
+        setProgress(scrollY / bodyRef.current.scrollHeight);
       }
       if (refSection1.current.offsetTop <= scrollY && scrollY <= (refSection2.current.offsetTop - scrollOffset)) {
         setBgTheme(sectionList[0].theme);
@@ -161,14 +184,14 @@ function Main() {
 
         console.log(refSection4Chart1.current.offsetTop);
         // Chart Trigger Check
-        if(refSection3.current.offsetTop + refSection4Chart1.current.offsetTop < scrollY){
+        if (refSection3.current.offsetTop + refSection4Chart1.current.offsetTop < scrollY) {
           setTriggerList({
             ...triggerList,
             chart1Section4: true
           });
         }
 
-        if(refSection3.current.offsetTop + refSection4Chart2.current.offsetTop < scrollY){
+        if (refSection3.current.offsetTop + refSection4Chart2.current.offsetTop < scrollY) {
           setTriggerList({
             ...triggerList,
             chart2Section4: true
@@ -205,9 +228,12 @@ function Main() {
 
   return (
     <Container ref={bodyRef}>
-      <GNB bgTheme={bgTheme} />
+      <GNB
+        bgTheme={bgTheme}
+        anchorlist={anchorlist}
+      />
       <Handle progress={progress}>
-        <img src={bgTheme==='light'?illust_handle_dark:illust_handle_light} alt='' />
+        <img src={bgTheme === 'light' ? illust_handle_dark : illust_handle_light} alt='' />
       </Handle>
       <Section1
         refObject={refSection1}

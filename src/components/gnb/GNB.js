@@ -1,3 +1,4 @@
+import * as Scroll from 'react-scroll';
 import styled from 'styled-components';
 import ic_logo_black from '../../assets/img/logo/logo_black.svg';
 import ic_logo_white from '../../assets/img/logo/logo_white.svg';
@@ -69,19 +70,33 @@ const MenuList = [
   'Contact'
 ];
 
-function GNB(
-  {bgTheme}
-){
+function GNB({
+  bgTheme,
+  anchorlist
+}){
+
+  const Scroll = require('react-scroll');
+  const scroll = Scroll.animateScroll;
   // console.log(bgTheme);
   return (
     <Container bgTheme={bgTheme}>
-      <Logo>
+      <Logo onClick={
+        () => {
+          scroll.scrollTo(anchorlist['section1']);
+        }
+      }>
         <img src={bgTheme==='light'?ic_logo_black:ic_logo_white} alt='' />
       </Logo>
       <MenuContainer>
         {
           MenuList.map((menu,i) => 
-            <Menu key={i}>
+            <Menu
+              key={i}
+              onClick={() => {
+                console.log('click')
+                scroll.scrollTo(anchorlist[`section${i+3}`]);
+              }}
+            >
               {menu}
             </Menu>
           )
