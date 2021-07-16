@@ -88,7 +88,18 @@ const TextIllust = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
-`
+  img{
+    width: 90%;
+    height: auto;
+  }
+  @media screen and (max-width: 800px) {
+    margin: 64px 0;
+  }
+`;
+
+const CompanyInfo = styled(Exp)`
+  margin-bottom: 128px;
+`;
 
 function Section8({
   refObject,
@@ -236,9 +247,11 @@ function Section8({
         <TextIllust>
           <img src={illust_text_section2} alt='' />
         </TextIllust>
-        <Exp color={'pinkBeige'}>
+        <CompanyInfo
+          color={'pinkBeige'}
+        >
           (주)스타스테크 STAR’s TECH   대표 양승찬   서울특별시 구로구 디지털로 30길 28, 마리오타워 1203호 08389   사업자등록번호 853-87-00953
-        </Exp>
+        </CompanyInfo>
       </Section>
     </Container>
   )

@@ -38,6 +38,15 @@ const BgImage = styled.div`
     width: 100%;
     height: auto;
   }
+  @media screen and (max-width: 480px){
+    width: 100%;
+    left: 0;
+    img{
+    margin-top: 80px;
+    width: 100%;
+    height: auto;
+  }
+  }
 `;
 const prdList1 = [
   {

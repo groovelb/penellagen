@@ -28,10 +28,11 @@ const Container = styled.div`
 function Exp(
   {
     children,
-    color
+    color,
+    className
   }) {
   return (
-    <Container color={color}>
+    <Container className={className} color={color}>
       {children}
     </Container>
   )

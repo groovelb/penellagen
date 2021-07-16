@@ -31,8 +31,8 @@ const Container = styled.div`
 `;
 
 const Logo = styled.div`
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   ${ props => props.theme.layout.flexCol }
   ${ props => props.theme.layout.flexCenter }
 `;

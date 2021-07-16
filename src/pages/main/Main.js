@@ -37,6 +37,16 @@ const Handle = styled.div`
   height: 264px;
   transform: ${props => `rotate(${props.progress * 30 * 360}deg)`};
   transition: transform 0.5s ease;
+  @media screen and (max-width: 800px) {
+    bottom: -82px;
+    left: calc((100% - 164px)/2);
+    width: 164px;
+    height: 164px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
 `;
 
 function Main() {
