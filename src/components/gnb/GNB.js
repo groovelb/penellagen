@@ -49,6 +49,7 @@ const MenuContainer = styled.div`
 
 const Menu = styled.div`
   cursor: pointer;
+  ${props => props.theme.typeBlock.menu}
 `;
 
 const Lang = styled.div`

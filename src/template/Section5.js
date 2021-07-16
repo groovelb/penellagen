@@ -27,7 +27,6 @@ const ContentSection = styled.div`
   margin-bottom: ${props => props.theme.spacing.subsectionMarginBottom};
 `;
 
-
 function Section5({
     refObject,
     isTrigger

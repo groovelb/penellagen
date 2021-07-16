@@ -6,6 +6,8 @@ const Container = styled.div`
   width: 100%;
   input{
     width: 100%;
+    ${props => props.theme.typeBlock.body}
+    padding-bottom: 3px;
   }
 `;
 

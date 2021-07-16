@@ -64,7 +64,7 @@ const theme = {
   },
   typeBlock: {
     msgBig: `
-      font-family: BigCaslon;
+      font-family: 'Libre Caslon Text', serif;;
       font-size: 108px;
       line-height: 124px;
       letter-spacing: 11px;
@@ -75,7 +75,7 @@ const theme = {
       }
     `,
     msgMiddle: `
-      font-family: BigCaslon;
+      font-family: 'Libre Caslon Text', serif;;
       font-size: 44px;
       line-height: 56px;
       letter-spacing: 4px;
@@ -86,13 +86,13 @@ const theme = {
       }
     `,
     numberingHuge: `
-      font-family: BigCaslon;
+      font-family: 'Libre Caslon Text', serif;;
       font-size: 96px;
       line-height: 115px;
       letter-spacing: 0px;
     `,
     numberingBig: `
-      font-family: BigCaslon !important;
+      font-family: 'Libre Caslon Text', serif; !important;
       font-size: 64px !important;
       line-height: 76px !important;
       letter-spacing: 0px;
@@ -103,7 +103,8 @@ const theme = {
       }
     `,
     h1: `
-      font-family: AppleSDGothicNeoB;
+      font-family: 'Noto Sans KR','Noto Sans SC', sans-serif;
+      font-weight: 500;
       font-size: 32px;
       line-height: 48px;
       letter-spacing: 0px;
@@ -114,7 +115,8 @@ const theme = {
       }
     `,
     subtitle: `
-      font-family: AppleSDGothicNeoB;
+      font-family: 'Noto Sans KR','Noto Sans SC', sans-serif;
+      font-weight: 500;
       font-size: 24px;
       line-height: 32px;
       letter-spacing: 0px;
@@ -124,8 +126,15 @@ const theme = {
         letter-spacing: 0px;
       }
     `,
+    menu: `
+      font-family: 'Noto Sans KR','Noto Sans SC', sans-serif;
+      font-weight: 500;
+      font-size: 14.8px;
+      line-height: 22px;
+      letter-spacing: 0px;
+    `,
     body: `
-      font-family: AppleSDGothicNeoB;
+      font-family: 'Noto Sans KR','Noto Sans SC', sans-serif;
       font-size: 16px;
       line-height: 28px;
       letter-spacing: 0px;
@@ -137,7 +146,7 @@ const theme = {
       letter-spacing: 0px;
     `,
     table: `
-      font-family: AppleSDGothicNeoB;
+      font-family: 'Noto Sans KR','Noto Sans SC', sans-serif;
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 0px;
