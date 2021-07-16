@@ -29,7 +29,7 @@ const Top = styled.div`
 const VideoBox = styled.div`
   position: absolute;
   top: 12px;
-  left: 348px;
+  left: 372px;
   width: ${props => props.isTrigger ? '690px' : '800px'};
   height: 112px;
   opacity: ${props => props.isTrigger ? '1' : '1'};

@@ -31,21 +31,22 @@ const Container = styled.div`
 const Handle = styled.div`
   position: fixed;
   z-index: 99;
-  bottom: -132px;
-  left: calc((100% - 264px)/2);
-  width: 264px;
-  height: 264px;
-  transform: ${props => `rotate(${props.progress * 30 * 360}deg)`};
+  bottom: -112px;
+  left: calc((100% - 224px)/2);
+  width: 224px;
+  height: 224px;
+  img{
+    width: 100%;
+    height: 100%;
+  }
+  transform: ${props => `rotate(${props.progress * 6 * 360}deg)`};
   transition: transform 0.5s ease;
   @media screen and (max-width: 800px) {
     bottom: -82px;
     left: calc((100% - 164px)/2);
     width: 164px;
     height: 164px;
-    img{
-      width: 100%;
-      height: 100%;
-    }
+    
   }
 `;
 

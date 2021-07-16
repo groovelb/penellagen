@@ -140,9 +140,9 @@ const theme = {
       letter-spacing: 0px;
     `,
     button: `
-      font-family: AppleSDGothicNeoB;
-      font-size: 14px;
-      line-height: 14px;
+      font-family: 'Noto Sans KR','Noto Sans SC', sans-serif;
+      font-size: 16px;
+      line-height: 18px;
       letter-spacing: 0px;
     `,
     table: `

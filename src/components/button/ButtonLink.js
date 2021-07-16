@@ -8,7 +8,7 @@ const Container = styled.a`
   align-items: center;
   width: fit-content;
   /* height: 44px; */
-  padding: 12px 24px;
+  padding: 14px 24px;
   ${
     props => props.theme.typeBlock.button
   }

@@ -40,6 +40,21 @@ const Col1 = styled.div`
   width: 100%;
 `;
 
+const ColLeft = styled.div`
+  width: calc(60% - 12px);
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
+`;
+
+const ColRight = styled.div`
+  width: calc(40% - 12px);
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
+`;
+
+
 const Col2 = styled.div`
   width: calc(50% - 12px);
   @media screen and (max-width: 800px) {
@@ -138,7 +153,7 @@ function Section8({
     <Container ref={refObject}>
       <Section>
         <ContentBox>
-          <Col2
+          <ColLeft
             style={{
               display: 'flex',
               flexWrap: 'wrap',
@@ -210,14 +225,14 @@ function Section8({
                 disabled={false}
               />
             </Col1>
-          </Col2>
-          <Col2 
+          </ColLeft>
+          <ColRight 
             className={'penellagen'}
             style={{
             textAlign: 'center'
           }}>
             <Penellagen src={illust_penellagen} alt='' />
-          </Col2>
+          </ColRight>
         </ContentBox>
         <ActionBar>
           <Button
