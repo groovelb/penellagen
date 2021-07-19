@@ -26,9 +26,9 @@ const Container = styled.div`
   }};
   margin-bottom: ${props => props.theme.spacing.contentMarginBottom2};
   ${props => props.theme.layout.flexRowCol}
-  justify-content: space-between;
+  /* justify-content: space-between; */
   width: 50%;
-  padding-right: 56px;
+  padding-right: 48px;
   @media screen and (max-width: 800px) {
     padding-right: 0px;
     width: 100%;
@@ -59,9 +59,11 @@ const Title = styled.div`
         return props.theme.color.black;
     }
   }};
-  width: ${props => props.theme.spacing.horizonTitle};
+  max-width: ${props => props.theme.spacing.horizonTitle};
+  margin-right: 32px;
   @media screen and (max-width: 800px) {
     width: 100% !important;
+    margin-right: 0px;
     /* white-space: nowrap; */
     margin-bottom: ${props => props.theme.spacing.headlineMarginBottom};
   }
