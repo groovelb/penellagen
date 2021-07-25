@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 import Section from '../components/layout/Section';
 import Title from '../components/textContainer/Title';
@@ -71,13 +72,13 @@ const Exp = styled.div`
 
 const Logo = styled.img`
   margin: ${props => `calc(${props.theme.spacing.unit} * 8)`} 0;
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1280px) {
     margin: ${props => `calc(${props.theme.spacing.unit} * 3)`} 0;
   }
 `;
 
 const TextIllust = styled.img`
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1280px) {
     width: calc(100% - 48px);
   }
 `;
@@ -86,6 +87,10 @@ function Section2({
   refObject,
   isTrigger
 }) {
+
+  // Language
+  const { t, i18n } = useTranslation();
+
   return (
     <Container ref={refObject}>
       <Section>
@@ -94,8 +99,8 @@ function Section2({
             isTrigger={isTrigger}
             index={0}
           >
-            당신의 바다, 당신의 항해
-        </ToTop>
+            {t('story-sub-title')}
+          </ToTop>
 
         </Subtitle>
         <VideoBox>
@@ -137,9 +142,9 @@ function Section2({
             isTrigger={isTrigger}
             index={4}
           >
-            당신은 좋은 화장품 원료를 찾아 바다를 항해합니다. <br />
-            그 과정이 쉽지 만은 않을 거예요. <br />
-            때로는 파도를 만나 멈추기도 하고, 잘못된 선택을 하여 되돌아오는 경우도 있겠죠.
+            {t('story-exp-s1')}<br />
+            {t('story-exp-s2')}<br />
+            {t('story-exp-s3')}
           </ToTop>
         </Exp>
         <Exp>
@@ -147,9 +152,10 @@ function Section2({
             isTrigger={isTrigger}
             index={5}
           >
-            당신은 좋은 화장품 원료를 찾아 바다를 항해합니다. <br />
-            그 과정이 쉽지 만은 않을 거예요. <br />
-            때로는 파도를 만나 멈추기도 하고, 잘못된 선택을 하여 되돌아오는 경우도 있겠죠.
+            <strong>
+              {t('story-exp-s4')}<br />
+              {t('story-exp-s5')}
+            </strong>
           </ToTop>
         </Exp>
         <ToTop

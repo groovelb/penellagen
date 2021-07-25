@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import theme from '../assets/theme/theme';
+import { useTranslation } from 'react-i18next';
 
 import ToTop from '../components/motion/ToTop';
 
@@ -21,6 +21,10 @@ const Container = styled.div`
   }
 `;
 
+const CustomSection = styled(Section)`
+  padding-bottom: 0px !important;
+`;  
+
 const ContentSection = styled.div`
   width: 100%;
   ${props => props.theme.layout.flexRowCol}
@@ -31,9 +35,12 @@ function Section5({
     refObject,
     isTrigger
   }) {
+
+  const { t, i18n } = useTranslation();
+
   return (
     <Container ref={refObject}>
-      <Section>
+      <CustomSection>
         <Title
           color={'white'}
         >
@@ -52,41 +59,51 @@ function Section5({
           >
           <ContentSection>
           <TextBoxTitled2to1
-            title={'믿기지 \n 않는 재생력 \n 불가사리'}
+            title={`${t('tech3-Part-title1')} 
+            ${t('tech3-Part-title2')}
+            ${t('tech3-Part-title3')}
+            `}
             titleColor={'greenTea'}
             bodyColor={'white'}
           >
             <p>
-              不可殺伊<br/>
-              죽일 수 없다’라는 뜻의 이름을 가진 불가사리는 강력한 세포 재생능력을 가진 해양생물입니다.
+              {t('tech3-exp-s1')}
             </p>
             <p>
-              <span>불가사리 한 마리를 작게 10조각 내면 한 조각도 빠짐없이 재생해 10마리의 온전한 불가사리가 될 정도이죠.</span>
+              <span>{t('tech3-exp-s2')}</span>
             </p>
             <p>
-              이러한 놀라운 재생 능력으로 인해 그 개체 수가 걷잡을 수없이 증가하고 있으며 이제는 바다의 포식자로 불리고 있습니다.
+              {t('tech3-exp-s3')}
             </p>
           </TextBoxTitled2to1>
           <TextBoxTitled2to1
-            title={'바다를 \n 뒤덮은 \n 불가사리'}
+            title={`${t('tech3-Part-title4')} 
+            ${t('tech3-Part-title5')}
+            ${t('tech3-Part-title6')}
+            `}
             titleColor={'pinkOrange'}
             bodyColor={'white'}
           >
             <p>
-              不可殺伊<br/>
-              죽일 수 없다’라는 뜻의 이름을 가진 불가사리는 강력한 세포 재생능력을 가진 해양생물입니다.
+              {t('tech3-exp-s4')} <span>{t('tech3-exp-s5')}</span> 
+              {t('tech3-exp-s6')}
             </p>
             <p>
-              <span>불가사리 한 마리를 작게 10조각 내면 한 조각도 빠짐없이 재생해 10마리의 온전한 불가사리가 될 정도이죠.</span>
+              {t('tech3-exp-s7')}
             </p>
             <p>
-              이러한 놀라운 재생 능력으로 인해 그 개체 수가 걷잡을 수없이 증가하고 있으며 이제는 바다의 포식자로 불리고 있습니다.
+              {t('tech3-exp-s8')} 
+              <span> {t('tech3-exp-s9')}</span>
+              {t('tech3-exp-s10')}
+            </p>
+            <p>
+              
             </p>
           </TextBoxTitled2to1>
         </ContentSection>
         </ToTop>
-      </Section>
-      <img src={img_bg_transition_green_beige} alt='' />
+      </CustomSection>
+      {/* <img src={img_bg_transition_green_beige} alt='' /> */}
     </Container>
   )
 }

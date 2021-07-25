@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 import ProductCardSlide from '../components/slide/ProductCardSlide';
 import Section from '../components/layout/Section';
@@ -38,7 +39,7 @@ const BgImage = styled.div`
     width: 100%;
     height: auto;
   }
-  @media screen and (max-width: 480px){
+  @media screen and (max-width: 1280px){
     width: 100%;
     left: 0;
     img{
@@ -108,6 +109,8 @@ function Section7({
   refObject,
   isTrigger
 }) {
+  const { t, i18n } = useTranslation();
+
   return (
     <Container ref={refObject}>
       <Section bgColor=''>
@@ -131,7 +134,7 @@ function Section7({
               isTrigger={isTrigger}
               index={1}
             >
-              브랜드 제품
+              {t('product-titile-brand')}
             </ToTop>
           </SubTitle>
           <ToTop
@@ -149,7 +152,7 @@ function Section7({
               isTrigger={isTrigger}
               index={3}
             >
-              병의원 제품
+              {t('product-titile-medical')}
             </ToTop>
           </SubTitle>
           <ToTop

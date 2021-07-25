@@ -43,6 +43,10 @@ const FAB = styled.button`
   }
   height: 100%;
   background-color: rgba(0,0,0,0);
+  @media screen and (max-width: 1440px) {
+    ${props => props.isLeft && `left: 0px`};
+    ${props => props.isRight && `right: 0px`};
+  }
   @media screen and (max-width: 800px) {
     width: 32px;
     ${props => props.isLeft && `left: 0px`};

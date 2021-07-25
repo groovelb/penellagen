@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Container = styled.div`
+  display: inline-block;
   position: relative;
   width: 100%;
   padding:${
@@ -30,6 +31,12 @@ const Container = styled.div`
         return props.theme.color.black;
     }
   }};
+  @media screen and (max-width: 1280px) {
+    width: 100%;
+    padding:${
+      props => props.theme.spacing.sectionPadding
+    } 24px;
+  }
   @media screen and (max-width: 800px) {
     width: 100%;
     padding:${
@@ -41,12 +48,14 @@ const Container = styled.div`
 function Section({
     children,
     bgColor,
-    bgImg
+    bgImg,
+    className
   }) {
   return (
     <Container
       bgColor={bgColor}
       bgImg={bgImg}
+      className={className}
     >
       {children}
     </Container>

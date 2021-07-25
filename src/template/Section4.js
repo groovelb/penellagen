@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { isMobile } from 'react-device-detect';
 
-import styled from 'styled-components';
-import theme from '../assets/theme/theme';
+import styled, {keyframes} from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 import Section from '../components/layout/Section';
 import Chart from '../components/chart/Chart';
@@ -16,7 +17,7 @@ import TextBox from '../components/textContainer/TextBox';
 import Exp from '../components/textContainer/Exp';
 import Table from '../components/table/Table';
 
-import img_bg from '../assets/img/background/img_bg_section4.jpg';
+import IllustPenellagen from '../components/illustInteractive/IllustPenellagen';
 // import illust_penellagen from '../assets/img/illust/illust_penellagen.svg';
 import illust_penellagen from '../assets/img/illust/illust_penellagen_png.png';
 import ic_logo_text_white from '../assets/img/logo/logo_text_white.svg';
@@ -40,6 +41,14 @@ const Top = styled.div`
   .right{
     width: 480px;
   }
+  @media screen and (max-width: 1280px) {
+    .left{
+      width: calc(100% - 256px);
+    }
+    .right{
+      width: 256px;
+    }
+  }
   @media screen and (max-width: 800px) {
     div{ 
       width: 100% !important;
@@ -60,13 +69,14 @@ const TopRight = styled.div`
   .textLogo{
     width: 480px;
     height: auto;
+    @media screen and (max-width: 1280px) {
+      width: 100%;
+    }
     @media screen and (max-width: 800px) {
       width: calc(100% - 48px);
       height: auto;
     }
   }
-  
-  
 `;
 
 const VideoContainer = styled.div`
@@ -74,6 +84,12 @@ const VideoContainer = styled.div`
   height: 714px;
   background-color: #000;
   margin-bottom: ${props => props.theme.spacing.contentMarginBottom1};
+  @media screen and (max-width: 1280px) {
+    width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+    height: 240px;
+  }
   @media screen and (max-width: 800px) {
     width: 100%;
     padding-left: 24px;
@@ -100,7 +116,9 @@ const ContentSection = styled.div`
 
 const Col = styled.div`
   width: 50%;
+  padding-right: 32px;
   @media screen and (max-width: 800px) {
+    padding-right: 0px;
     width: 100%;
   }
   table{
@@ -118,12 +136,19 @@ const Col6 = styled.div`
   }
 `;
 
+const Floating = keyframes`
+  0% { transform: translatey(0px); }
+  50% { transform: translatey(-32px); }
+  10% { transform: translatey(0px); }
+`;
+
 const Penellagen = styled.div`
   width: 100%;
   text-align: center;
+  animation: ${Floating} 6s ease-in-out infinite;
   img{
-    width: 400px;
-    height: 400px;
+    width: 464px;
+    height: 464px;
   }
   @media screen and (max-width: 800px) {
     img{
@@ -131,6 +156,10 @@ const Penellagen = styled.div`
       height: auto;
     }
   }
+`;
+
+const FloatingContainer = styled.div`
+  animation: ${Floating} 6s ease-in-out infinite;
 `;
 
 const BackgrondTransition = styled.img`
@@ -149,40 +178,74 @@ const TableContainer = styled.div`
 
 function Section4({
   refObject,
+  ref2Object,
   isTrigger,
+  isRef2Trigger,
   refChart1,
   refChart2,
   isChart1Trigger,
   isChart2Trigger
 }) {
 
+  const { t, i18n } = useTranslation();
+
   const chartData1 = [
     {
-      label: '페넬라겐',
+      label: t('tech1-exp-s4'),
       value: 523.7
     },
     {
-      label: '파쉬콜라겐',
+      label: t('tech1-exp-s5'),
       value: 90.7
     },
     {
-      label: '돈피콜라겐',
+      label: t('tech1-exp-s6'),
       value: 0
     }
   ];
 
   const chartData2 = [
     {
-      label: '페넬라겐',
+      label: t('tech1-exp-s4'),
       value: 93.8
     },
     {
-      label: '파쉬콜라겐',
+      label: t('tech1-exp-s5'),
       value: 84.2
     },
     {
-      label: '돈피콜라겐',
+      label: t('tech1-exp-s6'),
       value: 81
+    }
+  ];
+
+  const chartData3 = [
+    {
+      label: t('tech1-exp-s4'),
+      value: 88.0
+    },
+    {
+      label: t('tech1-exp-s5'),
+      value: -2.0
+    },
+    {
+      label: t('tech1-exp-s6'),
+      value: -3.0
+    }
+  ];
+
+  const chartData4 = [
+    {
+      label: t('tech1-exp-s4'),
+      value: 62.0
+    },
+    {
+      label: t('tech1-exp-s5'),
+      value: 23.0
+    },
+    {
+      label: t('tech1-exp-s6'),
+      value: 54.0
     }
   ];
 
@@ -193,39 +256,21 @@ function Section4({
         isHighlight: false
       },
       {
-        value: '증류수 \n 0.0%',
+        value: t('tech2-exp-s21'),
         isHighlight: false
       },
       {
-        value: '페넬라겐 \n 0.3%',
+        value: t('tech2-exp-s22'),
         isHighlight: false
       },
       {
-        value: '페넬라겐 \n 3.0%',
-        isHighlight: false
-      },
-    ],
-    [
-      {
-        value: '반응속도',
-        isHighlight: false
-      },
-      {
-        value: '0.00',
-        isHighlight: false
-      },
-      {
-        value: '0.00',
-        isHighlight: false
-      },
-      {
-        value: '0.00',
+        value: t('tech2-exp-s23'),
         isHighlight: false
       },
     ],
     [
       {
-        value: '자극지수',
+        value: t('tech2-exp-s18'),
         isHighlight: false
       },
       {
@@ -243,7 +288,25 @@ function Section4({
     ],
     [
       {
-        value: '판정',
+        value: t('tech2-exp-s19'),
+        isHighlight: false
+      },
+      {
+        value: '0.00',
+        isHighlight: false
+      },
+      {
+        value: '0.00',
+        isHighlight: false
+      },
+      {
+        value: '0.00',
+        isHighlight: false
+      },
+    ],
+    [
+      {
+        value: t('tech2-exp-s20'),
         isHighlight: false
       },
       {
@@ -282,7 +345,7 @@ function Section4({
               Skin <br />
               Technology
               <Exp color='white'>
-                Penetration (피부침투) + Collagen (콜라겐) = Penellagen
+                {t('tech-Sub-title')}
               </Exp>
             </ToTop>
           </Title>
@@ -299,7 +362,7 @@ function Section4({
         </Top>
         <VideoContainer>
         </VideoContainer>
-        <ContentContainer>
+        <ContentContainer ref={ref2Object}>
           <ContentSection>
             <Col>
               <SubTitleNumbering
@@ -307,25 +370,21 @@ function Section4({
                 colorNum={'lightBeige'}
                 color={'white'}
               >
-                진피층 침투 기술
+                {t('tech1-Part-title1')}
               </SubTitleNumbering>
               <TextBox color={'white'}>
                 <p>
-                  속이 비어있는 채로 진피층에 도달하는 타 전달체들과 달리 인지질 2중층막에
-                  특수성분을 결합시킨 새로운 탄성 에토좀으로 진피층까지 도달하는 것은 물론,
-                  90%에 가까운 불가사리 콜라겐 펩티드 성분을 담을 수 있습니다.
+                  {t('tech1-exp-s1')}
                 </p>
-
                 <p>
-                  이를 통해 속이 꽉 찬 상태로 유연하게 진피층까지 이동해 콜라겐 펩티드를
-                  효과적으로 전달시킬 수 있는 세계 최초의 기술을 탄생시켰습니다.
+                  {t('tech1-exp-s2')}
                 </p>
               </TextBox>
               <Exp color='white'>
-                동일한 TDS 기준 담재효율을 적용한
+                {t('tech1-Part-title2')}
               </Exp>
               <SubTitle>
-                실제 피부 투과율 <span>단위: mg / cm² / h</span>
+                {t('tech1-Part-title3')} <span>{t('tech1-exp-s3')}</span>
               </SubTitle>
               <Chart
                 data={chartData1}
@@ -334,10 +393,10 @@ function Section4({
                 isTrigger={isChart1Trigger}
               />
               <Exp color='lightBeige'>
-                * 인공피부 피부 투과율(SKIN PAMPA Assay)
+                {t('tech1-exp-s7')}
               </Exp>
               <Exp color='white'>
-                * 세계적인 논문 Journal of Industrial and Engineering Chemistry 에 해당 내용 개제
+                {t('tech1-exp-s8')}
               </Exp>
             </Col>
             <Col>
@@ -353,48 +412,87 @@ function Section4({
                 colorNum={'lightBeige'}
                 color={'white'}
               >
-                불가사리 콜라겐 펩티드
+                {t('tech2-Part-title1')}
               </SubTitleNumbering>
               <TextBox color={'white'}>
                 <p>
-                  죽지 않는 불가사리 재생의 원천 성분으로써
-                  항산화성, 미백효과와 주름 억제 능력이 매우 뛰어나고
-                  독성과 피부 자극이 없어 믿고 사용할 수 있는 안전한 성분입니다.
+                  {t('tech2-exp-s1')}
                 </p>
               </TextBox>
               <Exp color='white'>
-                동일한 TDS 기준 담재효율을 적용한
+                {t('tech1-Part-title2')}
               </Exp>
               <SubTitle>
-                세포 생존율 <span>단위: %</span>
+                {t('tech2-Part-title2')} <span>{t('tech2-exp-s2')}</span>
               </SubTitle>
               <Chart
                 data={chartData2}
                 maxValue={100}
                 refObject={refChart2}
                 isTrigger={isChart2Trigger}
+                index={0}
               />
               <Exp color='lightBeige'>
-                * 0.2, 0.4, 0.6, 0.8, 1.0mg/mL 투여시, HDF 세포 대상 MTT Assay 결과 평균값
+                {t('tech2-exp-s6')}
               </Exp>
             </Col>
+            <Col style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
+              <FloatingContainer>
+                <IllustPenellagen
+                  size={isMobile?256:448}
+                  isTrigger={isRef2Trigger}
+                  type={'peptides'}
+                  // peptides || ethosome
+                />
+              </FloatingContainer>   
+            </Col>
+          </ContentSection>
+          <ContentSection>
             <Col>
-              <Penellagen>
-                <img src={illust_penellagen} alt='' />
-              </Penellagen>
+              <SubTitle>
+                  {t('tech2-Part-title3')} <span>{t('tech2-exp-s2')}</span>
+                </SubTitle>
+                <Chart
+                  data={chartData3}
+                  maxValue={100}
+                  refObject={refChart2}
+                  isTrigger={isChart2Trigger}
+                  index={2}
+                />
+                <Exp color='lightBeige'>
+                  {t('tech2-chart3-exp')}
+                </Exp>
+            </Col>
+            <Col>
+              <SubTitle>
+                  {t('tech2-Part-title4')} <span>{t('tech2-exp-s2')}</span>
+                </SubTitle>
+                <Chart
+                  data={chartData4}
+                  maxValue={100}
+                  refObject={refChart2}
+                  isTrigger={isChart2Trigger}
+                  index={3}
+                />
+                <Exp color='lightBeige'>
+                  {t('tech2-chart4-exp')}
+                </Exp>
             </Col>
           </ContentSection>
           <ContentSection>
             <Col6>
               <SubTitle>
-                반응도 및 자극성 평가 <span>ICDRG 판정 기준</span>
+                {t('tech2-Part-title5')} <span>{t('tech2-Part-title6')}</span>
               </SubTitle>
               <TableContainer>
                 <Table data={tableData} />
               </TableContainer>
-              <ButtonLink>
-                실험 & 기능성 데이터 다운로드
-              </ButtonLink>
+              {
+                i18n.language !== 'cn' &&
+                <ButtonLink>
+                  {t('tech2-exp-s25')}
+                </ButtonLink>
+              }
             </Col6>
             <Col>
 

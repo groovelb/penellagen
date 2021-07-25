@@ -24,6 +24,8 @@ import illust_handle_dark from '../../assets/img/illust/illust_handle_light.svg'
 
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 100%;
   background-color: ${theme.color.bg};
 `;
@@ -67,6 +69,7 @@ function Main() {
   const refSection4 = useRef(null);
   const refSection4Chart1 = useRef(null);
   const refSection4Chart2 = useRef(null);
+  const refSection4_2 = useRef(null);
   const refSection5 = useRef(null);
   const refSection6 = useRef(null);
   const refSection7 = useRef(null);
@@ -91,6 +94,7 @@ function Main() {
       ref: refSection4,
       refChart1: refSection4Chart1,
       refChart2: refSection4Chart2,
+      ref2: refSection4_2,
       theme: 'dark',
     },
     {
@@ -119,6 +123,7 @@ function Main() {
       section3: false,
       section4: false,
       chart1Section4: false,
+      section4_2: false,
       chart2Section4: false,
       section5: false,
       section6: false,
@@ -147,7 +152,7 @@ function Main() {
       ...triggerList,
       section1: true
     });
-    
+
     setAnchorList({
       section1: refSection1.current.offsetTop,
       section2: refSection2.current.offsetTop,
@@ -187,28 +192,39 @@ function Main() {
           section3: true
         });
       } else if (refSection4.current.offsetTop - scrollOffset < scrollY && scrollY < refSection5.current.offsetTop - scrollOffset) {
+        console.log('section4!');
         setBgTheme(sectionList[3].theme);
         setTriggerList({
           ...triggerList,
           section4: true
         });
 
-        console.log(refSection4Chart1.current.offsetTop);
-        // Chart Trigger Check
+        // Chart1 Trigger Check
         if (refSection3.current.offsetTop + refSection4Chart1.current.offsetTop < scrollY) {
+          console.log('chart1!');
           setTriggerList({
             ...triggerList,
             chart1Section4: true
           });
         }
 
+        // Section2 Trigger Check
+        if (refSection4.current.offsetTop + refSection4_2.current.offsetTop < scrollY) {
+          console.log('section4_2!');
+          setTriggerList({
+            ...triggerList,
+            section4_2: true
+          });
+        }
+
+        // Chart2 Trigger Check
         if (refSection3.current.offsetTop + refSection4Chart2.current.offsetTop < scrollY) {
+          console.log('chart2!');
           setTriggerList({
             ...triggerList,
             chart2Section4: true
           });
         }
-
       } else if (refSection5.current.offsetTop - scrollOffset < scrollY && scrollY < refSection6.current.offsetTop - scrollOffset) {
         setBgTheme(sectionList[4].theme);
         setTriggerList({
@@ -260,7 +276,9 @@ function Main() {
       />
       <Section4
         refObject={refSection4}
+        ref2Object={refSection4_2}
         isTrigger={triggerList['section4']}
+        isRef2Trigger={triggerList['section4_2']}
         refChart1={refSection4Chart1}
         refChart2={refSection4Chart2}
         isChart1Trigger={triggerList['chart1Section4']}

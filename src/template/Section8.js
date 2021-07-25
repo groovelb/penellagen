@@ -1,5 +1,6 @@
 import react, { useState } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 import Section from '../components/layout/Section';
 import Title from '../components/textContainer/Title';
@@ -9,7 +10,6 @@ import CheckBox from '../components/form/CheckBox';
 import Button from '../components/button/Button';
 import TextLink from '../components/button/TextLink';
 
-// import illust_penellagen from '../assets/img/illust/illust_penellagen.svg';
 import illust_penellagen from '../assets/img/illust/illust_penellagen_png.png';
 import illust_text_section2 from '../assets/img/illust/illust_text_section2.svg';
 
@@ -63,7 +63,7 @@ const Col2 = styled.div`
 `;
 
 const Penellagen = styled.img`
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1280px) {
     width: calc(100% - 56px);
     height: auto;
     display: none;
@@ -121,6 +121,8 @@ function Section8({
   isTrigger
 }) {
 
+  const { t, i18n } = useTranslation();
+
   // Form Data
   const [lastName , setLastName] = useState('');
   const [firstName , setFirstName] = useState('');
@@ -167,7 +169,7 @@ function Section8({
             </Title>
             <Col2>
               <TextField
-                name='Last Name'
+                name={t('contact-last-name')}
                 type='text'
                 placeholder='성을 입력해주세요'
                 value={lastName}
@@ -177,7 +179,7 @@ function Section8({
             </Col2>
             <Col2>
               <TextField
-                name='First Name'
+                name={t('contact-first-name')}
                 type='text'
                 placeholder='이름을 입력해주세요'
                 value={firstName}
@@ -187,7 +189,7 @@ function Section8({
             </Col2>
             <Col1>
               <TextField
-                name='Company'
+                name={t('contact-company')}
                 type='text'
                 placeholder='회사명을 입력해주세요'
                 value={company}
@@ -197,7 +199,7 @@ function Section8({
             </Col1>
             <Col2>
               <TextField
-                name='Phone'
+                name={t('contact-mobile')}
                 type='text'
                 placeholder='전화 번호를 입력해주세요'
                 value={phone}
@@ -207,7 +209,7 @@ function Section8({
             </Col2>
             <Col2>
               <TextField
-                name='Fax'
+                name={t('contact-fax')}
                 type='text'
                 placeholder='팩스 번호를 입력해주세요'
                 value={fax}
@@ -217,7 +219,7 @@ function Section8({
             </Col2>
             <Col1>
               <TextField
-                name='Email'
+                name={t('contact-email')}
                 type='text'
                 placeholder='이메일을 입력해주세요'
                 value={email}
@@ -240,10 +242,10 @@ function Section8({
             color={'black'}
             bgColor={'lightBeige'}
           >
-            SEND
+            {t('btt-send')}
           </Button>
           <CheckBox
-            name='개인정보 보호 정책에 동의합니다.'
+            name={t('contact-exp-policy')}
             type='checkbox'
             value={''}
             className={'check'}
@@ -256,7 +258,7 @@ function Section8({
           <TextLink
             className={'policy'}
           >
-            개인정보 보호 정책 보기
+            {t('context-view-policy')}
           </TextLink>
         </ActionBar>
         <TextIllust>
@@ -265,7 +267,7 @@ function Section8({
         <CompanyInfo
           color={'pinkBeige'}
         >
-          (주)스타스테크 STAR’s TECH   대표 양승찬   서울특별시 구로구 디지털로 30길 28, 마리오타워 1203호 08389   사업자등록번호 853-87-00953
+          {t('footer-exp')}
         </CompanyInfo>
       </Section>
     </Container>

@@ -15,7 +15,7 @@ const Label = styled.div`
   margin-right: 24px;
   color: ${props => props.theme.color.white};
   opacity: ${props => props.isTrigger?1:0.3};
-  transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   transition-delay: ${props => `${props.index*0.3 + 0.5}s`};
 `;
 
@@ -24,7 +24,7 @@ const Bar = styled.div`
   border-radius: 16px;
   width: ${props => props.isTrigger?`calc(${props.value / props.maxValue}*(100% - 104px))`:0};
   opacity: ${props => props.isTrigger?1:0.3};
-  transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   transition-delay: ${props => `${props.index*0.3 + 0.5}s`};
   min-width: 48px;
   ${props => props.theme.layout.flexRow}
@@ -105,7 +105,8 @@ function Chart({
   data,
   maxValue,
   refObject,
-  isTrigger
+  isTrigger,
+  index
 }) {
 
   return (
@@ -122,7 +123,7 @@ function Chart({
             {
               datum.value===0?
               <BarZero color='white'>
-                {datum.value + '%'}
+                {datum.value}
               </BarZero>:
               <Bar
                 bgColor={i === 0 ? 'pinkOrange' : 'white'}
@@ -132,7 +133,7 @@ function Chart({
                 isTrigger={isTrigger}
                 index={i}
               >
-                {datum.value + '%'}
+                {datum.value}
               </Bar>
             }
             

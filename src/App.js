@@ -1,5 +1,6 @@
 
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import './translate/I18nSetting';
 import theme from './assets/theme/theme';
 import Main from './pages/main/Main';
 
@@ -15,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
   body, html {
     margin: 0;
     padding: 0;
+    width: 100%;
     ${
       theme.typeBlock.body
     }
