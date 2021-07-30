@@ -5,7 +5,7 @@ import styled, {keyframes} from 'styled-components';
 import { useTranslation } from 'react-i18next';
 
 import Section from '../components/layout/Section';
-import Chart from '../components/chart/Chart';
+import Chart from '../components/Chart/Chart';
 
 import ButtonLink from '../components/button/ButtonLink';
 
