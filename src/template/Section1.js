@@ -8,7 +8,7 @@ import video_bg_section1_pc from '../assets/video/video_bg_section1_pc.mp4';
 import video_bg_section1_mobile from '../assets/video/video_bg_section1_mobile.mp4';
 
 import useWindowSize from '../hook/useWindowSize';
-import ic_logo_text_white from '../assets/img/logo/logo_text_white.svg';
+import ic_logo_text_white from '../assets/img/logo/penellagen_logo_white.svg';
 
 const Container = styled.div`
   display: flex;

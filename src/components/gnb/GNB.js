@@ -61,6 +61,7 @@ const Lang = styled.div`
   height: 36px;
   border-radius: 18px;
   padding-bottom: 2px;
+  cursor: pointer;
   background-color: ${props => props.theme.color.beige};
   color: ${props => props.theme.color.white};
   ${props => props.theme.layout.flexCol}

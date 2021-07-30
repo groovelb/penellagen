@@ -17,7 +17,9 @@ import TextBox from '../components/textContainer/TextBox';
 import Exp from '../components/textContainer/Exp';
 import Table from '../components/table/Table';
 
-import IllustPenellagen from '../components/illustInteractive/IllustPenellagen';
+// import IllustPenellagen from '../components/illust/IllustPenellagenInteractive';
+import IllustPenellagen1 from '../components/illust/IllustPenellagenStatic1';
+import IllustPenellagen2 from '../components/illust/IllustPenellagenStatic2';
 // import illust_penellagen from '../assets/img/illust/illust_penellagen.svg';
 import illust_penellagen from '../assets/img/illust/illust_penellagen_png.png';
 import ic_logo_text_white from '../assets/img/logo/logo_text_white.svg';
@@ -395,9 +397,9 @@ function Section4({
               </Exp>
             </Col>
             <Col>
-              <Penellagen>
-                <img src={illust_penellagen} alt='' />
-              </Penellagen>
+              <FloatingContainer>
+                <IllustPenellagen1 />
+              </FloatingContainer>
             </Col>
           </ContentSection>
           <ContentSection>
@@ -433,12 +435,7 @@ function Section4({
             </Col>
             <Col style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <FloatingContainer>
-                <IllustPenellagen
-                  size={isMobile ? 256 : 448}
-                  isTrigger={isRef2Trigger}
-                  type={'peptides'}
-                // peptides || ethosome
-                />
+                <IllustPenellagen2 />
               </FloatingContainer>
             </Col>
           </ContentSection>
