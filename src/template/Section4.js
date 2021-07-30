@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { isMobile } from 'react-device-detect';
 
-import styled, {keyframes} from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { useTranslation } from 'react-i18next';
 
 import Section from '../components/layout/Section';
@@ -59,11 +59,10 @@ const Top = styled.div`
 
 const TopRight = styled.div`
   ${props => props.theme.layout.flexCol}
-  ${props => props.theme.layout.alignCenter}
+  /* ${props => props.theme.layout.alignCenter} */
   .penellagen{
-    width: 256px;
+    width: 312px;
     height: auto;
-    margin-top: 32px;
     margin-bottom: 16px;
   }
   .textLogo{
@@ -81,20 +80,15 @@ const TopRight = styled.div`
 
 const VideoContainer = styled.div`
   width: 1280px;
-  height: 714px;
+  height: fit-content;
   background-color: #000;
   margin-bottom: ${props => props.theme.spacing.contentMarginBottom1};
   @media screen and (max-width: 1280px) {
     width: 100%;
-    padding-left: 24px;
-    padding-right: 24px;
-    height: 240px;
+    
   }
   @media screen and (max-width: 800px) {
     width: 100%;
-    padding-left: 24px;
-    padding-right: 24px;
-    height: 240px;
   }
 `;
 
@@ -111,7 +105,7 @@ const ContentContainer = styled.div`
 const ContentSection = styled.div`
   width: 100%;
   ${props => props.theme.layout.flexRowCol}
-  margin-bottom: ${props => props.theme.spacing.subsectionMarginBottom};
+  margin-bottom: ${props => props.theme.spacing.subsectionMarginBottomSmall};
 `;
 
 const Col = styled.div`
@@ -137,14 +131,14 @@ const Col6 = styled.div`
 `;
 
 const Floating = keyframes`
-  0% { transform: translatey(0px); }
-  50% { transform: translatey(-32px); }
-  10% { transform: translatey(0px); }
+  0% { transform: translatey(0px)};
+  50% { transform: translatey(-32px)};
+  10% { transform: translatey(0px)};
 `;
 
 const Penellagen = styled.div`
   width: 100%;
-  text-align: center;
+  /* text-align: center; */
   animation: ${Floating} 6s ease-in-out infinite;
   img{
     width: 464px;
@@ -353,7 +347,7 @@ function Section4({
             <ToTop
               isTrigger={isTrigger}
               index={0}
-              style={{ textAlign: 'center', width: '100%' }}
+              style={{ width: '100%' }}
             >
               <img className={'penellagen'} src={illust_penellagen} alt='' />
               <img className={'textLogo'} src={ic_logo_text_white} alt='' />
@@ -361,6 +355,7 @@ function Section4({
           </TopRight>
         </Top>
         <VideoContainer>
+          <iframe style={{width:'100%', height:isMobile?'180px':'680px'}} src="https://www.youtube.com/embed/_QLLh0Cr7KE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </VideoContainer>
         <ContentContainer ref={ref2Object}>
           <ContentSection>
@@ -436,47 +431,47 @@ function Section4({
                 {t('tech2-exp-s6')}
               </Exp>
             </Col>
-            <Col style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
+            <Col style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <FloatingContainer>
                 <IllustPenellagen
-                  size={isMobile?256:448}
+                  size={isMobile ? 256 : 448}
                   isTrigger={isRef2Trigger}
                   type={'peptides'}
-                  // peptides || ethosome
+                // peptides || ethosome
                 />
-              </FloatingContainer>   
+              </FloatingContainer>
             </Col>
           </ContentSection>
           <ContentSection>
             <Col>
               <SubTitle>
-                  {t('tech2-Part-title3')} <span>{t('tech2-exp-s2')}</span>
-                </SubTitle>
-                <Chart
-                  data={chartData3}
-                  maxValue={100}
-                  refObject={refChart2}
-                  isTrigger={isChart2Trigger}
-                  index={2}
-                />
-                <Exp color='lightBeige'>
-                  {t('tech2-chart3-exp')}
-                </Exp>
+                {t('tech2-Part-title3')} <span>{t('tech2-exp-s2')}</span>
+              </SubTitle>
+              <Chart
+                data={chartData3}
+                maxValue={100}
+                refObject={refChart2}
+                isTrigger={isChart2Trigger}
+                index={2}
+              />
+              <Exp color='lightBeige'>
+                {t('tech2-chart3-exp')}
+              </Exp>
             </Col>
             <Col>
               <SubTitle>
-                  {t('tech2-Part-title4')} <span>{t('tech2-exp-s2')}</span>
-                </SubTitle>
-                <Chart
-                  data={chartData4}
-                  maxValue={100}
-                  refObject={refChart2}
-                  isTrigger={isChart2Trigger}
-                  index={3}
-                />
-                <Exp color='lightBeige'>
-                  {t('tech2-chart4-exp')}
-                </Exp>
+                {t('tech2-Part-title4')} <span>{t('tech2-exp-s2')}</span>
+              </SubTitle>
+              <Chart
+                data={chartData4}
+                maxValue={100}
+                refObject={refChart2}
+                isTrigger={isChart2Trigger}
+                index={3}
+              />
+              <Exp color='lightBeige'>
+                {t('tech2-chart4-exp')}
+              </Exp>
             </Col>
           </ContentSection>
           <ContentSection>

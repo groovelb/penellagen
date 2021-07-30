@@ -22,6 +22,7 @@ const Content = styled.div`
     if(props.size==='small') return '860px';
   }};
   padding: 24px;
+  color: ${ props => props.theme.color.black};
   background-color: ${ props => props.theme.color.white};
   border-radius: 2px;
   @media only screen and (max-width: 480px) {

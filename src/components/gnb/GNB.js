@@ -60,6 +60,7 @@ const Lang = styled.div`
   width: 36px;
   height: 36px;
   border-radius: 18px;
+  padding-bottom: 2px;
   background-color: ${props => props.theme.color.beige};
   color: ${props => props.theme.color.white};
   ${props => props.theme.layout.flexCol}
@@ -134,7 +135,9 @@ function GNB({
           }
         }
         bgTheme={bgTheme}>
-        KR
+        {i18n.language==='kr'&&'KR'}
+        {i18n.language==='en'&&'EN'}
+        {i18n.language==='cn'&&'CN'}
       </Lang>
     </Container>
   )

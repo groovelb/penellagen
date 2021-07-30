@@ -34,6 +34,7 @@ const SelectLanguageModal = ({onClickClose}) => {
         selectedItemValue={i18n.language}
         onLanguageChange={(value) => {
           i18n.changeLanguage(value);
+          onClickClose();
         }}
       />
     </Modal>
