@@ -156,6 +156,9 @@ const Penellagen = styled.div`
 
 const FloatingContainer = styled.div`
   animation: ${Floating} 6s ease-in-out infinite;
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
 `;
 
 const BackgrondTransition = styled.img`
