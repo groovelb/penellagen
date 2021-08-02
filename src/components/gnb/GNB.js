@@ -93,7 +93,7 @@ function GNB({
   useEffect(() => {
     // i18n.changeLanguage("kr");
     console.log(i18n.language);
-  },[])
+  }, [])
 
   return (
     <Container bgTheme={bgTheme}>
@@ -136,9 +136,9 @@ function GNB({
           }
         }
         bgTheme={bgTheme}>
-        {i18n.language==='kr'&&'KR'}
-        {i18n.language==='en'&&'EN'}
-        {i18n.language==='cn'&&'CN'}
+        {i18n.language === 'kr' && 'KR'}
+        {i18n.language === 'en' && 'EN'}
+        {i18n.language === 'cn' && 'CN'}
       </Lang>
     </Container>
   )
