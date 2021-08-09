@@ -7,8 +7,9 @@ import Title from '../components/textContainer/Title';
 import SubTitleHugeNumbering from '../components/textContainer/SubTitleHugeNumbering';
 import ButtonLink from '../components/button/ButtonLink';
 import ToTop from '../components/motion/ToTop';
+import ToBottom from '../components/motion/ToBottom';
 
-import img_section6_starfish from '../assets/img/background/img_section6_starfish.jpg';
+import img_section6_starfish from '../assets/img/background/img_section6_starfish_full.jpg';
 
 const Container = styled.div`
   width: 100%;
@@ -19,6 +20,10 @@ const Container = styled.div`
 
 const Top = styled.div`
   width: 100%;
+  height: 316px;
+  ${props => props.theme.layout.flexCol}
+  ${props => props.theme.layout.flexCenter}
+  overflow: hidden;
   img{
     width: 100%;
     height: auto;
@@ -98,12 +103,12 @@ function Section6({
           </ToTop>
         </Title>
         <Top>
-          <ToTop
-            isTrigger={isTrigger}
-            index={2}
-          >
-            <img src={img_section6_starfish} alt='' />
-          </ToTop>
+        <ToBottom
+              isTrigger={isTrigger}
+              index={2}
+            >
+              <img src={img_section6_starfish} alt='' />
+            </ToBottom>
         </Top>
         <ToTop
           isTrigger={isTrigger}

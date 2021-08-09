@@ -22,6 +22,7 @@ const Label = styled.div`
 
 const InputLabeled = ({
   name,
+  label,
   type,
   placeholder,
   required,
@@ -34,7 +35,7 @@ const InputLabeled = ({
   return (
     <Container className={className}>
       <Label>
-        {name}
+        {label}
       </Label>
       <input
         disabled={disabled}

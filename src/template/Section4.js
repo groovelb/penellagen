@@ -22,6 +22,8 @@ import IllustPenellagen1 from '../components/illust/IllustPenellagenStatic1';
 import IllustPenellagen2 from '../components/illust/IllustPenellagenStatic2';
 // import illust_penellagen from '../assets/img/illust/illust_penellagen.svg';
 import illust_penellagen from '../assets/img/illust/illust_penellagen_png.png';
+import illust_penellagen1 from '../assets/img/illust/illust_penellagen1.png';
+import illust_penellagen2 from '../assets/img/illust/illust_penellagen2.png';
 import ic_logo_text_white from '../assets/img/logo/logo_text_white.svg';
 import img_bg_wave from '../assets/img/background/img_bg_wave.png';
 
@@ -29,7 +31,7 @@ import img_bg_wave from '../assets/img/background/img_bg_wave.png';
 const Container = styled.div`
   position: relative;
   width: 100%;
-  background-color: ${props => props.theme.color.beige};
+  background-color: ${props => props.theme.color.lightBeige2};
   background-size: cover;
   color: ${props => props.theme.color.white};
 `;
@@ -360,7 +362,10 @@ function Section4({
           </TopRight>
         </Top>
         <VideoContainer>
-          <iframe style={{width:'100%', height:isMobile?'180px':'680px'}} src="https://www.youtube.com/embed/_QLLh0Cr7KE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          {
+            i18n.language==='kr'?<iframe style={{width:'100%', height:isMobile?'180px':'680px'}} src="https://www.youtube.com/embed/dG_HF8-UsCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>:
+            <iframe style={{width:'100%', height:isMobile?'180px':'680px'}} src="https://www.youtube.com/embed/_QLLh0Cr7KE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          }
         </VideoContainer>
         <ContentContainer ref={ref2Object}>
           <ContentSection>

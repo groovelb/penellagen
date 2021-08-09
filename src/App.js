@@ -105,6 +105,14 @@ const GlobalStyle = createGlobalStyle`
   input{
     outline: none;
   }
+  input[type="submit"]{
+    height: 44px;
+    padding: 0px 56px;
+    border: none;
+    border-radius: 0px;
+    background-color: ${props => props.theme.color.lightBeige};
+    color: ${props => props.theme.color.black};
+  }
 `;
 
 export default App;

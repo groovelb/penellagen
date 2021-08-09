@@ -2,9 +2,10 @@ const theme = {
   color: {
     bg: '#FAF5F1',
     lightBeige: '#EDE1DD',
+    lightBeige2: '#CABDBB',
     beige: '#b1a6a4',
     pinkBeige: '#AA837B',
-    emeraldGreen: "#00343A",
+    emeraldGreen: "#002938",
     greenTea: '#B1C79E',
     pinkOrange: '#FF775C',
     white: '#FFFFFF',
@@ -32,6 +33,7 @@ const theme = {
     headlineMarginBottom: '32px',
     headlineMarginBottomMobile: '16px',
     subsectionMarginBottom: '160px',
+    subsectionMarginBottomSmall: '120px',
     horizonTitle: '180px',
     horizonContent: '400px',
   },
@@ -152,6 +154,17 @@ const theme = {
       letter-spacing: 0px;
       @media screen and (max-width: 480px) {
         font-size: 14.8px;
+        line-height: 20px;
+        letter-spacing: 0px;
+      }
+    `,
+    caption: `
+      font-family: 'Noto Sans KR','Noto Sans SC', sans-serif;
+      font-size: 14.8px;
+      line-height: 22px;
+      letter-spacing: 0px;
+      @media screen and (max-width: 480px) {
+        font-size: 12px;
         line-height: 20px;
         letter-spacing: 0px;
       }

@@ -1,6 +1,7 @@
-import react, { useState } from 'react';
+import react, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
+import emailjs, { init } from 'emailjs-com';
 
 import Section from '../components/layout/Section';
 import Title from '../components/textContainer/Title';
@@ -54,6 +55,11 @@ const ColRight = styled.div`
   }
 `;
 
+const Form = styled.form`
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+`;
 
 const Col2 = styled.div`
   width: calc(50% - 12px);
@@ -75,14 +81,15 @@ const ActionBar = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  button{
+  margin-top: 32px;
+  input[type="submit"]{
     margin-right: 80px;
   }
   @media screen and (max-width: 800px) {
     margin-top: -56px;
     flex-direction: column;
     align-items: flex-start;
-    button{
+    input[type="submit"]{
       margin-bottom: 24px;
     }
     .send{
@@ -124,33 +131,44 @@ function Section8({
   const { t, i18n } = useTranslation();
 
   // Form Data
-  const [lastName , setLastName] = useState('');
-  const [firstName , setFirstName] = useState('');
-  const [company , setCompany] = useState('');
-  const [phone , setPhone] = useState('');
-  const [fax , setFax] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [company, setCompany] = useState('');
+  const [phone, setPhone] = useState('');
+  const [fax, setFax] = useState('');
   const [email, setEmail] = useState('');
   const [isCheck, setIsCheck] = useState(false);
 
   const setTextValue = (event) => {
     const {
-			target: { name, value },
+      target: { name, value },
     } = event;
-    if(name === "Last Name"){
+    if (name === "lastName") {
       setLastName(value);
-    } else if(name === "First Name"){
+    } else if (name === "firstName") {
       setFirstName(value);
-    } else if(name === "Company"){
+    } else if (name === "company") {
       setCompany(value);
-    } else if(name === "Phone"){
+    } else if (name === "phone") {
       setPhone(value);
-    } else if(name === "Fax"){
+    } else if (name === "fax") {
       setFax(value);
-    } else if(name === "Email"){
+    } else if (name === "email") {
       setEmail(value);
     }
   }
-  
+
+  const sendEmail = (e) => {
+    console.log('click');
+    e.preventDefault();
+    emailjs.sendForm('service_vq26fwq', 'template_sg7s05z', e.target, 'user_Pmtx7HQbPpKiWx1CZarHy')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  }
+
   return (
     <Container ref={refObject}>
       <Section>
@@ -163,104 +181,109 @@ function Section8({
             }}
           >
             <Title
-            isTrigger={isTrigger}
-            color='black'>
+              isTrigger={isTrigger}
+              color='black'>
               Contact Us
             </Title>
-            <Col2>
-              <TextField
-                name={t('contact-last-name')}
-                type='text'
-                placeholder='성을 입력해주세요'
-                value={lastName}
-                onChange={setTextValue}
-                disabled={false}
-              />
-            </Col2>
-            <Col2>
-              <TextField
-                name={t('contact-first-name')}
-                type='text'
-                placeholder='이름을 입력해주세요'
-                value={firstName}
-                onChange={setTextValue}
-                disabled={false}
-              />
-            </Col2>
-            <Col1>
-              <TextField
-                name={t('contact-company')}
-                type='text'
-                placeholder='회사명을 입력해주세요'
-                value={company}
-                onChange={setTextValue}
-                disabled={false}
-              />
-            </Col1>
-            <Col2>
-              <TextField
-                name={t('contact-mobile')}
-                type='text'
-                placeholder='전화 번호를 입력해주세요'
-                value={phone}
-                onChange={setTextValue}
-                disabled={false}
-              />
-            </Col2>
-            <Col2>
-              <TextField
-                name={t('contact-fax')}
-                type='text'
-                placeholder='팩스 번호를 입력해주세요'
-                value={fax}
-                onChange={setTextValue}
-                disabled={false}
-              />
-            </Col2>
-            <Col1>
-              <TextField
-                name={t('contact-email')}
-                type='text'
-                placeholder='이메일을 입력해주세요'
-                value={email}
-                onChange={setTextValue}
-                disabled={false}
-              />
-            </Col1>
+            <Form onSubmit={sendEmail}>
+              <Col2>
+                <TextField
+                  name={'lastName'}
+                  label={t('contact-last-name')}
+                  type='text'
+                  placeholder='성을 입력해주세요'
+                  value={lastName}
+                  onChange={setTextValue}
+                  disabled={false}
+                />
+              </Col2>
+              <Col2>
+                <TextField
+                  name={'firstName'}
+                  label={t('contact-first-name')}
+                  type='text'
+                  placeholder='이름을 입력해주세요'
+                  value={firstName}
+                  onChange={setTextValue}
+                  disabled={false}
+                />
+              </Col2>
+              <Col1>
+                <TextField
+                  name={'company'}
+                  label={t('contact-company')}
+                  type='text'
+                  placeholder='회사명을 입력해주세요'
+                  value={company}
+                  onChange={setTextValue}
+                  disabled={false}
+                />
+              </Col1>
+              <Col2>
+                <TextField
+                  name={'phone'}
+                  label={t('contact-mobile')}
+                  type='text'
+                  placeholder='전화 번호를 입력해주세요'
+                  value={phone}
+                  onChange={setTextValue}
+                  disabled={false}
+                />
+              </Col2>
+              <Col2>
+                <TextField
+                  name={'fax'}
+                  label={t('contact-fax')}
+                  type='text'
+                  placeholder='팩스 번호를 입력해주세요'
+                  value={fax}
+                  onChange={setTextValue}
+                  disabled={false}
+                />
+              </Col2>
+              <Col1>
+                <TextField
+                  name={'email'}
+                  label={t('contact-email')}
+                  type='text'
+                  placeholder='이메일을 입력해주세요'
+                  value={email}
+                  onChange={setTextValue}
+                  disabled={false}
+                />
+              </Col1>
+              <ActionBar>
+                <input
+                  type={"submit"}
+                  value={t('btt-send')}
+                />
+                <CheckBox
+                  name={t('contact-exp-policy')}
+                  type='checkbox'
+                  value={''}
+                  className={'check'}
+                  onChange={(e) => {
+                    console.log(isCheck);
+                    setIsCheck(!isCheck);
+                  }}
+                  checked={isCheck}
+                />
+                <TextLink
+                  className={'policy'}
+                >
+                  {t('context-view-policy')}
+                </TextLink>
+              </ActionBar>
+            </Form>
           </ColLeft>
-          <ColRight 
+          <ColRight
             className={'penellagen'}
             style={{
-            textAlign: 'center'
-          }}>
+              textAlign: 'center'
+            }}>
             <Penellagen src={illust_penellagen} alt='' />
           </ColRight>
         </ContentBox>
-        <ActionBar>
-          <Button
-            className={'send'}
-            color={'black'}
-            bgColor={'lightBeige'}
-          >
-            {t('btt-send')}
-          </Button>
-          <CheckBox
-            name={t('contact-exp-policy')}
-            type='checkbox'
-            value={''}
-            className={'check'}
-            onChange={() => {
-              console.log('check!');
-              setIsCheck(!isCheck);
-            }}
-            checked={isCheck}
-          />
-          <TextLink
-            className={'policy'}
-          >
-            {t('context-view-policy')}
-          </TextLink>
-        </ActionBar>
         <TextIllust>
           <img src={illust_text_section2} alt='' />
         </TextIllust>

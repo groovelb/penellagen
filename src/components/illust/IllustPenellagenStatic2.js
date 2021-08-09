@@ -4,7 +4,7 @@ import * as d3 from "d3";
 import styled, { keyframes } from 'styled-components';
 import { useTranslation } from 'react-i18next';
 
-import illust_penellagen from '../../assets/img/illust/illust_penellagen_png.png';
+import illust_penellagen from '../../assets/img/illust/illust_penellagen2.png';
 
 const Container = styled.div`
   position: relative;
@@ -12,6 +12,7 @@ const Container = styled.div`
     width: 464px;
     height: 464px;
   }
+  ${props => props.theme.typeBlock.table}
   @media screen and (max-width: 480px) {
     width: 100%;
     height: auto;
@@ -22,12 +23,13 @@ const ExpContainer = styled.div`
   position: absolute;
   display: flex;
   flex-direction: row;
-  width: 248px;
+  width: 280px;
   bottom: ${props => `${props.bottom}px`};
   right: ${props => `${props.right}px`};
   transition: all 1s ease-out;
   transition-delay: ${props => `${props.index * 0.2}s`};
   text-shadow: 0px 0px 8px rgba(0,0,0,0.48);
+  ${props => props.theme.typeBlock.caption}
   @media screen and (max-width: 480px) {
     width: 224px;
   }
@@ -68,7 +70,7 @@ function IllustPenellagen({
       <img src={illust_penellagen} alt='' />
       <ExpContainer
         bottom={isMobile?24:96}
-        right={isMobile?-48:-24}
+        right={isMobile?-48:-56}
       >
         <ExpLine1 />
         <ExpLine2>
