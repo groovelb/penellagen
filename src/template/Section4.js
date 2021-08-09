@@ -89,7 +89,6 @@ const VideoContainer = styled.div`
   margin-bottom: ${props => props.theme.spacing.contentMarginBottom1};
   @media screen and (max-width: 1280px) {
     width: 100%;
-    
   }
   @media screen and (max-width: 800px) {
     width: 100%;
