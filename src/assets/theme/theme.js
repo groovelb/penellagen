@@ -34,7 +34,7 @@ const theme = {
     headlineMarginBottomMobile: '16px',
     subsectionMarginBottom: '160px',
     subsectionMarginBottomSmall: '120px',
-    horizonTitle: '180px',
+    horizonTitle: '156px',
     horizonContent: '400px',
   },
   layout: {
@@ -113,6 +113,18 @@ const theme = {
       @media screen and (max-width: 480px) {
         font-size: 26px;
         line-height: 40px;
+        letter-spacing: 0px;
+      }
+    `,
+    h2: `
+      font-family: 'Noto Sans KR','Noto Sans SC', sans-serif;
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 40px;
+      letter-spacing: 0px;
+      @media screen and (max-width: 480px) {
+        font-size: 22px;
+        line-height: 28px;
         letter-spacing: 0px;
       }
     `,

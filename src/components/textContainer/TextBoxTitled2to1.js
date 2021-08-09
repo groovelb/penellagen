@@ -37,7 +37,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  ${props => props.theme.typeBlock.h1}
+  ${props => props.theme.typeBlock.h2}
   white-space: pre-line;
   color: ${props => {
     switch (props.titleColor) {
