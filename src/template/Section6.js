@@ -19,6 +19,7 @@ const Container = styled.div`
 `;
 
 const Top = styled.div`
+  position: relative;
   width: 100%;
   height: 316px;
   ${props => props.theme.layout.flexCol}
@@ -28,6 +29,12 @@ const Top = styled.div`
     width: 100%;
     height: auto;
   }
+`;
+
+const TopImage = styled.img`
+  position: relative;
+  top: ${props => 280*props.progress + 'px'};
+  transition: top 1s ease-out;
 `;
 
 const VideoBox = styled.div`
@@ -77,7 +84,8 @@ const Col = styled.div`
 
 function Section6({
   refObject,
-  isTrigger
+  isTrigger,
+  progress
 }) {
 
   const { t, i18n } = useTranslation();
@@ -103,12 +111,11 @@ function Section6({
           </ToTop>
         </Title>
         <Top>
-        <ToBottom
-              isTrigger={isTrigger}
-              index={2}
-            >
-              <img src={img_section6_starfish} alt='' />
-            </ToBottom>
+          <TopImage
+            src={img_section6_starfish}
+            alt='' 
+            progress={progress}
+          />
         </Top>
         <ToTop
           isTrigger={isTrigger}

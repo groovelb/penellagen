@@ -59,6 +59,7 @@ function Main() {
   const [isScrollStart, setIsScrollStart] = useState(false);
   const scrollOffset = isMobile ? 200 : 400;
   const [progress, setProgress] = useState(0);
+  const [section6Progress, setSection6Progress] = useState(0);
 
 
   // Intit Section Ref
@@ -226,12 +227,18 @@ function Main() {
           });
         }
       } else if (refSection5.current.offsetTop - scrollOffset < scrollY && scrollY < refSection6.current.offsetTop - scrollOffset) {
+        console.log('section5');
         setBgTheme(sectionList[4].theme);
         setTriggerList({
           ...triggerList,
           section5: true
         });
       } else if (refSection6.current.offsetTop - scrollOffset < scrollY && scrollY < refSection7.current.offsetTop - scrollOffset) {
+        console.log('section6');
+        let section6Length = refSection6.current.offsetHeight;
+        let progress = scrollY - (refSection6.current.offsetTop - scrollOffset);
+        setSection6Progress(progress/section6Length);
+
         setBgTheme(sectionList[5].theme);
         setTriggerList({
           ...triggerList,
@@ -291,6 +298,7 @@ function Main() {
       <Section6
         refObject={refSection6}
         isTrigger={triggerList['section6']}
+        progress={section6Progress}
       />
       <Section7
         refObject={refSection7}
