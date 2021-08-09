@@ -97,7 +97,7 @@ const VideoContainer = styled.div`
 `;
 
 const ContentContainer = styled.div`
-  background-color: ${props => props.theme.color.beige};
+  background-color: ${props => props.theme.color.lightBeige2};
   padding: ${props => props.theme.spacing.subSectionPadding};
   @media screen and (max-width: 800px) {
     padding: ${props => props.theme.spacing.subSectionPaddingMobile};
