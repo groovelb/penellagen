@@ -14,6 +14,10 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   text-align: center;
+  .center{
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const Logo = styled.img`
@@ -42,6 +46,7 @@ function Section1({
       >
         <Section>
           <ToTop
+            className={'center'}
             isTrigger={isTrigger}
             index={0}
           >

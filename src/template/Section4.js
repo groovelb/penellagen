@@ -17,13 +17,15 @@ import TextBox from '../components/textContainer/TextBox';
 import Exp from '../components/textContainer/Exp';
 import Table from '../components/table/Table';
 
-// import IllustPenellagen from '../components/illust/IllustPenellagenInteractive';
 import IllustPenellagen1 from '../components/illust/IllustPenellagenStatic1';
 import IllustPenellagen2 from '../components/illust/IllustPenellagenStatic2';
-// import illust_penellagen from '../assets/img/illust/illust_penellagen.svg';
 import illust_penellagen from '../assets/img/illust/illust_penellagen_png.png';
-import illust_penellagen1 from '../assets/img/illust/illust_penellagen1.png';
-import illust_penellagen2 from '../assets/img/illust/illust_penellagen2.png';
+import illust_penellagen_top_kr_pc from '../assets/img/illust/section4Top/illust_pc_kor.png';
+import illust_penellagen_top_kr_mobile from '../assets/img/illust/section4Top/illust_mobile_kor.png';
+import illust_penellagen_top_eng_pc from '../assets/img/illust/section4Top/illust_pc_Eng.png';
+import illust_penellagen_top_eng_mobile from '../assets/img/illust/section4Top/illust_mobile_Eng.png';
+import illust_penellagen_top_cn_pc from '../assets/img/illust/section4Top/illust_pc_Cn.png';
+import illust_penellagen_top_cn_mobile from '../assets/img/illust/section4Top/illust_mobile_Cn.png';
 import ic_logo_text_white from '../assets/img/logo/logo_text_white.svg';
 import img_bg_wave from '../assets/img/background/img_bg_wave.png';
 
@@ -53,7 +55,7 @@ const Top = styled.div`
       width: 256px;
     }
   }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 768px) {
     div{ 
       width: 100% !important;
       margin-bottom: ${props => props.theme.spacing.contentMarginBottom1};
@@ -64,10 +66,23 @@ const Top = styled.div`
 const TopRight = styled.div`
   ${props => props.theme.layout.flexCol}
   /* ${props => props.theme.layout.alignCenter} */
+
+  @media screen and (max-width: 768px) {
+    margin-top: -80px;
+    margin-bottom: 0px !important;
+  }
+
   .penellagen{
-    width: 312px;
-    height: auto;
+    width: auto;
+    height: 302px;
     margin-bottom: 16px;
+  }
+  @media screen and (max-width: 768px) {
+    .penellagen{
+      width: 100%;
+      height: auto;
+      margin-bottom: 16px;
+    }
   }
   .textLogo{
     width: 480px;
@@ -75,9 +90,10 @@ const TopRight = styled.div`
     @media screen and (max-width: 1280px) {
       width: 100%;
     }
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 768px) {
       width: calc(100% - 48px);
       height: auto;
+      display: none;
     }
   }
 `;
@@ -90,7 +106,7 @@ const VideoContainer = styled.div`
   @media screen and (max-width: 1280px) {
     width: 100%;
   }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 768px) {
     width: 100%;
   }
 `;
@@ -98,7 +114,7 @@ const VideoContainer = styled.div`
 const ContentContainer = styled.div`
   background-color: ${props => props.theme.color.lightBeige2};
   padding: ${props => props.theme.spacing.subSectionPadding};
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 768px) {
     padding: ${props => props.theme.spacing.subSectionPaddingMobile};
     width: calc(100% + 48px);
     margin-left: -24px;
@@ -114,9 +130,10 @@ const ContentSection = styled.div`
 const Col = styled.div`
   width: 50%;
   padding-right: 32px;
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 768px) {
     padding-right: 0px;
     width: 100%;
+    margin-bottom: ${props => props.isBottomMargin?props.theme.spacing.subsectionMarginBottomSmall:0};
   }
   table{
     margin-bottom: ${props => props.theme.spacing.contentMarginBottom1};
@@ -125,7 +142,7 @@ const Col = styled.div`
 
 const Col6 = styled.div`
   width: 60%;
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 768px) {
     width: 100%;
   }
   table{
@@ -147,7 +164,7 @@ const Penellagen = styled.div`
     width: 464px;
     height: 464px;
   }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 768px) {
     img{
       width: calc(100% - 48px);
       height: auto;
@@ -157,7 +174,7 @@ const Penellagen = styled.div`
 
 const FloatingContainer = styled.div`
   animation: ${Floating} 6s ease-in-out infinite;
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 768px) {
     display: none;
   }
 `;
@@ -169,7 +186,7 @@ const BackgrondTransition = styled.img`
 `;
 
 const TableContainer = styled.div`
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 768px) {
     margin-left: -24px;
     width: calc(100% + 48px);
     text-align: center;
@@ -324,6 +341,22 @@ function Section4({
     ],
   ];
 
+  const setTopImg = () => {
+    if (!isMobile && i18n.language === 'kr') {
+      return illust_penellagen_top_kr_pc;
+    } else if (isMobile && i18n.language === 'kr') {
+      return illust_penellagen_top_kr_mobile;
+    } else if (!isMobile && i18n.language === 'en') {
+      return illust_penellagen_top_eng_pc;
+    } else if (isMobile && i18n.language === 'en') {
+      return illust_penellagen_top_eng_mobile;
+    } else if (!isMobile && i18n.language === 'cn') {
+      return illust_penellagen_top_cn_pc;
+    } else if (isMobile && i18n.language === 'cn') {
+      return illust_penellagen_top_cn_mobile;
+    }
+  }
+
   return (
     <Container
       color
@@ -355,15 +388,15 @@ function Section4({
               index={0}
               style={{ width: '100%' }}
             >
-              <img className={'penellagen'} src={illust_penellagen} alt='' />
+              <img className={'penellagen'} src={setTopImg()} alt='' />
               <img className={'textLogo'} src={ic_logo_text_white} alt='' />
             </ToTop>
           </TopRight>
         </Top>
         <VideoContainer>
           {
-            i18n.language==='kr'?<iframe style={{width:'100%', height:isMobile?'180px':'680px'}} src="https://www.youtube.com/embed/dG_HF8-UsCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>:
-            <iframe style={{width:'100%', height:isMobile?'180px':'680px'}} src="https://www.youtube.com/embed/_QLLh0Cr7KE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            i18n.language === 'kr' ? <iframe style={{ width: '100%', height: isMobile ? '180px' : '680px' }} src="https://www.youtube.com/embed/dG_HF8-UsCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> :
+              <iframe style={{ width: '100%', height: isMobile ? '180px' : '680px' }} src="https://www.youtube.com/embed/_QLLh0Cr7KE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           }
         </VideoContainer>
         <ContentContainer ref={ref2Object}>
@@ -447,7 +480,7 @@ function Section4({
             </Col>
           </ContentSection>
           <ContentSection>
-            <Col>
+            <Col isBottomMargin={true}>
               <SubTitle>
                 {t('tech2-Part-title3')} <p>{t('tech2-exp-s2')}</p>
               </SubTitle>

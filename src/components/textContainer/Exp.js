@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
+const Container = styled.p`
   display: inline-block;
   ${props => props.theme.typeBlock.body}
+  margin-bottom: 0px;
   color: ${props => {
     switch (props.color) {
       case 'lightBeige':

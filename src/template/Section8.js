@@ -7,6 +7,7 @@ import Section from '../components/layout/Section';
 import Title from '../components/textContainer/Title';
 import Exp from '../components/textContainer/Exp';
 import TextField from '../components/form/TextField';
+import TextArea from '../components/form/TextArea';
 import CheckBox from '../components/form/CheckBox';
 import Button from '../components/button/Button';
 import TextLink from '../components/button/TextLink';
@@ -83,24 +84,25 @@ const ActionBar = styled.div`
   align-items: center;
   margin-top: 32px;
   input[type="submit"]{
-    margin-right: 80px;
+    margin-right: 48px;
   }
   @media screen and (max-width: 800px) {
-    margin-top: -56px;
+    margin-top: 32px;
     flex-direction: column;
     align-items: flex-start;
     input[type="submit"]{
       margin-bottom: 24px;
     }
     .send{
-      order: 3
+      order: 3;
     }
     .check{
       order: 1;
-      margin-bottom: 64px;
+      margin-bottom: 24px;
     }
     .policy{
-      order: 2
+      order: 2;
+      margin-bottom: 24px;
     }
   }
 `;
@@ -137,6 +139,7 @@ function Section8({
   const [phone, setPhone] = useState('');
   const [fax, setFax] = useState('');
   const [email, setEmail] = useState('');
+  const [memo, setMemo] = useState('');
   const [isCheck, setIsCheck] = useState(false);
 
   const setTextValue = (event) => {
@@ -155,6 +158,8 @@ function Section8({
       setFax(value);
     } else if (name === "email") {
       setEmail(value);
+    }  else if (name === "memo") {
+      setMemo(value);
     }
   }
 
@@ -252,8 +257,20 @@ function Section8({
                   disabled={false}
                 />
               </Col1>
+              <Col1>
+                <TextArea
+                  name={'memo'}
+                  label={t('contact-memo')}
+                  type='text'
+                  placeholder='문의사항을 입력해주세요'
+                  value={memo}
+                  onChange={setTextValue}
+                  disabled={false}
+                />
+              </Col1>
               <ActionBar>
                 <input
+                  className={'send'}
                   type={"submit"}
                   value={t('btt-send')}
                 />

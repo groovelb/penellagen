@@ -62,7 +62,7 @@ const Title = styled.p`
   @media screen and (max-width: 800px) {
     padding-top: 10.6px;
     padding-left: 8px;
-    width: calc(100% - 56px);
+    width: calc(100% - 48px);
   }
 `
 

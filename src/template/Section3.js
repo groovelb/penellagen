@@ -60,8 +60,8 @@ const ContentBox = styled.div`
     display: none;
     @media screen and (max-width: 800px) {
       display: inline-block !important;
-      margin-top: -64px;
-      margin-bottom: 24px;
+      margin-top: -48px;
+      margin-bottom: ${props => props.theme.spacing.contentMarginBottom1};
     }
   }
 `;

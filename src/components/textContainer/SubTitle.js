@@ -29,10 +29,10 @@ const Container = styled.div`
     ${props => props.theme.typeBlock.body}
     color: ${props => props.theme.color.lightBeige};
     @media screen and (max-width: 800px) {
-      position: absolute;
+      /* position: absolute; */
       left: 0;
       margin-left: 0;
-      bottom: -24px;
+      /* bottom: -24px; */
     }
   }
 `;

@@ -7,6 +7,7 @@ import Title from '../components/textContainer/Title';
 import SubTitleHugeNumbering from '../components/textContainer/SubTitleHugeNumbering';
 import ButtonLink from '../components/button/ButtonLink';
 import ToTop from '../components/motion/ToTop';
+import Exp from '../components/textContainer/Exp';
 import ToBottom from '../components/motion/ToBottom';
 
 import img_section6_starfish from '../assets/img/background/img_section6_starfish_full.jpg';
@@ -54,17 +55,17 @@ const ContentBox = styled.div`
   margin-top: -64px;
 `;
 
-const Exp = styled.div`
-  /* height: 248px; */
-  margin-bottom: 32px;
-  span{
-    color: ${props => props.theme.color.pinkOrange};
-  }
-  @media screen and (max-width: 800px) {
-    height: fit-content;
-    margin-bottom: 32px;
-  }
-`;
+// const Exp = styled.div`
+//   /* height: 248px; */
+//   margin-bottom: 32px;
+//   span{
+//     color: ${props => props.theme.color.pinkOrange};
+//   }
+//   @media screen and (max-width: 800px) {
+//     height: fit-content;
+//     margin-bottom: 32px;
+//   }
+// `;
 
 const Col = styled.div`
   position: relative;
@@ -79,6 +80,10 @@ const Col = styled.div`
   @media screen and (max-width: 800px) {
     width: 100%;
     margin-bottom: ${props => props.theme.spacing.contentMarginBottom1};
+    a{
+      position: static;
+      margin-top: ${props => props.theme.spacing.contentMarginBottom1};
+    }
   }
 `;
 
@@ -90,7 +95,7 @@ function Section6({
 
   const { t, i18n } = useTranslation();
 
-  return (
+return (
     <Container
       isTrigger={isTrigger}
       ref={refObject}
@@ -105,9 +110,9 @@ function Section6({
             index={1}
           >
             Our Move
-            <p>
+            <Exp color='black'>
               {t('move-Sub-title')}
-            </p>
+            </Exp>
           </ToTop>
         </Title>
         <Top>

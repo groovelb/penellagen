@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   position: relative;
+  display: grid;
   ${props => props.theme.typeBlock.msgBig}
   color: ${props => {
     switch (props.color) {
@@ -25,7 +26,7 @@ const Container = styled.div`
   }};
   margin-bottom: ${props => props.theme.spacing.titleMarginBottom};
   p{
-    ${props => props.theme.typeBlock.subtitle}
+    margin-top: ${props => props.theme.spacing.small} !important;
   }
   @media screen and (max-width: 800px) {
     margin-bottom: ${props => props.theme.spacing.titleMarginBottomMobile};

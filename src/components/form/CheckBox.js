@@ -41,8 +41,11 @@ const Label = styled.label`
   }
   span{
     position: absolute;
+    top: -2px;
+    left: 0px;
     width: 280px;
-    padding-left: 44px;
+    padding-left: 36px;
+    padding-bottom: 4px;
     color: ${props => props.theme.color.pinkBeige};
   }
 `;

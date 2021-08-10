@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   // Transition
   top: ${props => props.isTrigger?'0px':'80px'};

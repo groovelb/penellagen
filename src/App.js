@@ -90,6 +90,16 @@ const GlobalStyle = createGlobalStyle`
     border-bottom: solid 2px ${props => props.theme.color.pinkBeige};
     padding-left: 112px;
   }
+  textarea{
+    border: none;
+    background: none !important;
+    height: 96px;
+    border-bottom: solid 2px ${props => props.theme.color.pinkBeige};
+    padding-left: 112px;
+    resize: none;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
 
   input[type="checkbox"]:checked + label:after {
     opacity: 1;
