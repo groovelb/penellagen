@@ -388,7 +388,7 @@ function Section4({
                 {t('tech1-Part-title2')}
               </Exp>
               <SubTitle>
-                {t('tech1-Part-title3')} <span>{t('tech1-exp-s3')}</span>
+                {t('tech1-Part-title3')} <p>{t('tech1-exp-s3')}</p>
               </SubTitle>
               <Chart
                 data={chartData1}
@@ -427,7 +427,7 @@ function Section4({
                 {t('tech1-Part-title2')}
               </Exp>
               <SubTitle>
-                {t('tech2-Part-title2')} <span>{t('tech2-exp-s2')}</span>
+                {t('tech2-Part-title2')} <p>{t('tech2-exp-s2')}</p>
               </SubTitle>
               <Chart
                 data={chartData2}
@@ -449,7 +449,7 @@ function Section4({
           <ContentSection>
             <Col>
               <SubTitle>
-                {t('tech2-Part-title3')} <span>{t('tech2-exp-s2')}</span>
+                {t('tech2-Part-title3')} <p>{t('tech2-exp-s2')}</p>
               </SubTitle>
               <Chart
                 data={chartData3}
@@ -464,7 +464,7 @@ function Section4({
             </Col>
             <Col>
               <SubTitle>
-                {t('tech2-Part-title4')} <span>{t('tech2-exp-s2')}</span>
+                {t('tech2-Part-title4')} <p>{t('tech2-exp-s2')}</p>
               </SubTitle>
               <Chart
                 data={chartData4}
@@ -481,7 +481,7 @@ function Section4({
           <ContentSection>
             <Col6>
               <SubTitle>
-                {t('tech2-Part-title5')} <span>{t('tech2-Part-title6')}</span>
+                {t('tech2-Part-title5')} <p>{t('tech2-Part-title6')}</p>
               </SubTitle>
               <TableContainer>
                 <Table data={tableData} />

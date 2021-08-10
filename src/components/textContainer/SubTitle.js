@@ -24,8 +24,8 @@ const Container = styled.div`
     }
   }};
   margin-bottom: ${props => `calc(${props.theme.spacing.headlineMarginBottom} + 24px)`};
-  span{
-    margin-left: ${props => props.theme.spacing.medium};
+  p{
+    margin-left: ${props => props.theme.spacing.small};
     ${props => props.theme.typeBlock.body}
     color: ${props => props.theme.color.lightBeige};
     @media screen and (max-width: 800px) {

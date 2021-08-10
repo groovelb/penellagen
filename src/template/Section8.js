@@ -161,7 +161,7 @@ function Section8({
   const sendEmail = (e) => {
     console.log('click');
     e.preventDefault();
-    emailjs.sendForm('service_vq26fwq', 'template_sg7s05z', e.target, 'user_Pmtx7HQbPpKiWx1CZarHy')
+    emailjs.sendForm('service_zr3hr43', 'template_sg7s05z', e.target, 'user_Pmtx7HQbPpKiWx1CZarHy')
       .then((result) => {
           console.log(result.text);
       }, (error) => {
