@@ -116,12 +116,15 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
   }
   input[type="submit"]{
-    height: 44px;
-    padding: 0px 56px;
-    border: none;
-    border-radius: 0px;
-    background-color: ${props => props.theme.color.lightBeige};
-    color: ${props => props.theme.color.black};
+    height: 44px !important;
+    padding: 0px 56px !important;
+    border: none !important;
+    border-radius: 0px !important;
+    background-color: ${props => props.theme.color.lightBeige} !important;
+    color: ${props => props.theme.color.black} !important;
+  }
+  strong{
+    font-weight: 500;
   }
 `;
 

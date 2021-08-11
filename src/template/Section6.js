@@ -74,7 +74,7 @@ const Col = styled.div`
   /* justify-content: space-between; */
   a{
     position: absolute;
-    bottom: -48px;
+    bottom: -64px;
     left: 0;
   }
   @media screen and (max-width: 800px) {

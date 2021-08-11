@@ -45,11 +45,13 @@ function VideoBackground({
     <Container isFilter={isFilter}>
       <ReactPlayer
         url={videoSrc}
+        autoPlay
         playing
         loop
         muted
         width={width}
         height={height}
+        controls={false}
         style={{display: 'flex'}}
       />
       <Content>

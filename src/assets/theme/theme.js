@@ -71,8 +71,8 @@ const theme = {
       line-height: 124px;
       letter-spacing: 11px;
       @media screen and (max-width: 480px) {
-        font-size: 48px;
-        line-height: 56px;
+        font-size: 42px;
+        line-height: 52px;
         letter-spacing: 2px;
       }
     `,
@@ -82,8 +82,8 @@ const theme = {
       line-height: 56px;
       letter-spacing: 4px;
       @media screen and (max-width: 480px) {
-        font-size: 36px;
-        line-height: 44px;
+        font-size: 32px;
+        line-height: 40px;
         letter-spacing: 2px;
       }
     `,
@@ -152,6 +152,10 @@ const theme = {
       font-size: 16px;
       line-height: 28px;
       letter-spacing: 0px;
+      @media screen and (max-width: 480px) {
+        font-size: 14.8px;
+        line-height: 26px;
+      }
     `,
     button: `
       font-family: 'Noto Sans KR','Noto Sans SC', sans-serif;

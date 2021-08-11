@@ -30,6 +30,7 @@ const Container = styled.div`
   }};
   transition: color 0.25s ease-in-out;
   @media screen and (max-width: 800px) {
+    height: 64px;
     padding: 0px 12px;
   }
 `;
@@ -39,6 +40,12 @@ const Logo = styled.div`
   height: 40px;
   ${props => props.theme.layout.flexCol}
   ${props => props.theme.layout.flexCenter}
+  @media screen and (max-width: 800px) {
+    img{
+      width: 40px;
+      height: 38px;
+    } 
+  }
 `;
 
 const MenuContainer = styled.div`

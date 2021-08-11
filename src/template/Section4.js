@@ -63,6 +63,13 @@ const Top = styled.div`
   }
 `;
 
+const Floating = keyframes`
+  0% { transform: translatey(0px)};
+  50% { transform: translatey(-32px)};
+  10% { transform: translatey(0px)};
+`;
+
+
 const TopRight = styled.div`
   ${props => props.theme.layout.flexCol}
   /* ${props => props.theme.layout.alignCenter} */
@@ -76,6 +83,8 @@ const TopRight = styled.div`
     width: auto;
     height: 302px;
     margin-bottom: 16px;
+    object-fit: cover;
+    animation: ${Floating} 6s ease-in-out infinite;
   }
   @media screen and (max-width: 768px) {
     .penellagen{
@@ -121,6 +130,7 @@ const ContentContainer = styled.div`
   }
 `;
 
+
 const ContentSection = styled.div`
   width: 100%;
   ${props => props.theme.layout.flexRowCol}
@@ -150,11 +160,6 @@ const Col6 = styled.div`
   }
 `;
 
-const Floating = keyframes`
-  0% { transform: translatey(0px)};
-  50% { transform: translatey(-32px)};
-  10% { transform: translatey(0px)};
-`;
 
 const Penellagen = styled.div`
   width: 100%;
