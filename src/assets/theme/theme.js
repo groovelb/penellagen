@@ -148,7 +148,7 @@ const theme = {
       letter-spacing: 0px;
     `,
     body: `
-      font-family: 'Noto Sans KR','Noto Sans SC', sans-serif;
+      font-family: 'Noto Sans KR', sans-serif;
       font-size: 16px;
       line-height: 28px;
       letter-spacing: 0px;

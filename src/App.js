@@ -84,17 +84,20 @@ const GlobalStyle = createGlobalStyle`
   }
 
   input[type='text']{
-    border: none;
+    border: none !important;
     background: none !important;
-    height: 48px;
-    border-bottom: solid 2px ${props => props.theme.color.pinkBeige};
+    border-radius: 0px !important;
+    height: 48px !important;
+    border-bottom: solid 2px ${props => props.theme.color.pinkBeige} !important;
     padding-left: 112px;
   }
   textarea{
     border: none;
     background: none !important;
-    height: 96px;
-    border-bottom: solid 2px ${props => props.theme.color.pinkBeige};
+    height: 96px !important;
+    background: none !important;
+    border-radius: 0px !important;
+    border-bottom: solid 2px ${props => props.theme.color.pinkBeige} !important;
     padding-left: 112px;
     resize: none;
     padding-top: 8px;
@@ -114,6 +117,7 @@ const GlobalStyle = createGlobalStyle`
   }
   input{
     outline: none;
+    -webkit-appearance: none;
   }
   input[type="submit"]{
     height: 44px !important;
