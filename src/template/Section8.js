@@ -11,6 +11,7 @@ import TextArea from '../components/form/TextArea';
 import CheckBox from '../components/form/CheckBox';
 import Button from '../components/button/Button';
 import TextLink from '../components/button/TextLink';
+import Modal from '../components/modal/Modal';
 
 import illust_penellagen from '../assets/img/illust/illust_penellagen_png.png';
 import illust_text_section2 from '../assets/img/illust/illust_text_section2.svg';
@@ -125,6 +126,7 @@ const CompanyInfo = styled(Exp)`
   margin-bottom: 128px;
 `;
 
+
 function Section8({
   refObject,
   isTrigger
@@ -141,6 +143,7 @@ function Section8({
   const [email, setEmail] = useState('');
   const [memo, setMemo] = useState('');
   const [isCheck, setIsCheck] = useState(false);
+  const [bttText, setBttText] = useState(t('btt-send'));
 
   const setTextValue = (event) => {
     const {
@@ -166,9 +169,11 @@ function Section8({
   const sendEmail = (e) => {
     console.log('click');
     e.preventDefault();
+    setBttText(t('btt-sending') + '...');
     emailjs.sendForm('service_zr3hr43', 'template_sg7s05z', e.target, 'user_Pmtx7HQbPpKiWx1CZarHy')
       .then((result) => {
           console.log(result.text);
+          setBttText(t('btt-completed'));
       }, (error) => {
           console.log(error.text);
       });
@@ -196,7 +201,7 @@ function Section8({
                   name={'lastName'}
                   label={t('contact-last-name')}
                   type='text'
-                  placeholder='성을 입력해주세요'
+                  placeholder={t('placeholder-last-name')}
                   value={lastName}
                   onChange={setTextValue}
                   disabled={false}
@@ -207,7 +212,7 @@ function Section8({
                   name={'firstName'}
                   label={t('contact-first-name')}
                   type='text'
-                  placeholder='이름을 입력해주세요'
+                  placeholder={t('placeholder-first-name')}
                   value={firstName}
                   onChange={setTextValue}
                   disabled={false}
@@ -218,7 +223,7 @@ function Section8({
                   name={'company'}
                   label={t('contact-company')}
                   type='text'
-                  placeholder='회사명을 입력해주세요'
+                  placeholder={t('placeholder-company')}
                   value={company}
                   onChange={setTextValue}
                   disabled={false}
@@ -229,7 +234,7 @@ function Section8({
                   name={'phone'}
                   label={t('contact-mobile')}
                   type='text'
-                  placeholder='전화 번호를 입력해주세요'
+                  placeholder={t('placeholder-phone')}
                   value={phone}
                   onChange={setTextValue}
                   disabled={false}
@@ -240,7 +245,7 @@ function Section8({
                   name={'fax'}
                   label={t('contact-fax')}
                   type='text'
-                  placeholder='팩스 번호를 입력해주세요'
+                  placeholder={t('placeholder-fax')}
                   value={fax}
                   onChange={setTextValue}
                   disabled={false}
@@ -251,7 +256,7 @@ function Section8({
                   name={'email'}
                   label={t('contact-email')}
                   type='text'
-                  placeholder='이메일을 입력해주세요'
+                  placeholder={t('placeholder-email')}
                   value={email}
                   onChange={setTextValue}
                   disabled={false}
@@ -262,7 +267,7 @@ function Section8({
                   name={'memo'}
                   label={t('contact-memo')}
                   type='text'
-                  placeholder='문의사항을 입력해주세요'
+                  placeholder={t('placeholder-memo')}
                   value={memo}
                   onChange={setTextValue}
                   disabled={false}
@@ -272,7 +277,7 @@ function Section8({
                 <input
                   className={'send'}
                   type={"submit"}
-                  value={t('btt-send')}
+                  value={bttText}
                 />
                 <CheckBox
                   name={t('contact-exp-policy')}
@@ -288,7 +293,7 @@ function Section8({
                 <TextLink
                   className={'policy'}
                 >
-                  {t('context-view-policy')}
+                  {t('contact-view-policy')}
                 </TextLink>
               </ActionBar>
             </Form>

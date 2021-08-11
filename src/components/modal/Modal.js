@@ -48,10 +48,11 @@ const Modal = ({
   children,
   onClickClose,
   title,
-  size
+  size,
 }) => {
   return (
-    <Backdrop onClick={onClickClose}>
+    <Backdrop
+      onClick={onClickClose}>
       <Content
         size={size}
         onClick={
