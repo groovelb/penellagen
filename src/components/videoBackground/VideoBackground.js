@@ -1,3 +1,4 @@
+import { useEffect, useState, useRef } from "react";
 import styled from 'styled-components';
 import ReactPlayer from 'react-player';
 // import videoSrc from '../../assets/video/video_bg_section1.mp4';
@@ -10,7 +11,7 @@ const Container = styled.div`
   video{
     object-fit: cover;
   }
-  :after{
+  /* :after{
     content: '';
     position: absolute;
     top: 0;
@@ -19,7 +20,7 @@ const Container = styled.div`
     height: 100%;
     background-color: ${props => props.isFilter?'rgba(0,0,0,0.24)':'rgba(0,0,0,0)'};
     z-index: 9;
-  }
+  } */
 `;
 
 const Content = styled.div`
@@ -41,18 +42,36 @@ function VideoBackground({
     children,
     isFilter
   }){
+
+  const playerRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
+
+  const playVideo = () => {
+   console.log('load!');
+   setPlaying(true);
+  }
+
   return(
-    <Container isFilter={isFilter}>
+    <Container 
+    onClick={playVideo}
+    isFilter={isFilter}>
       <ReactPlayer
+        ref={playerRef}
         url={videoSrc}
-        autoPlay
-        playing
-        loop
-        muted
+        autoPlay={false}
+        playing={playing}
+        loop={true}
+        muted={true}
         width={width}
         height={height}
         controls={false}
+        playsinline={true}
         style={{display: 'flex'}}
+        onReady={
+          () => {
+            playVideo();
+          }
+        }
       />
       <Content>
         {children}

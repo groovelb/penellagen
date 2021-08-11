@@ -400,8 +400,8 @@ function Section4({
         </Top>
         <VideoContainer>
           {
-            i18n.language === 'kr' ? <iframe style={{ width: '100%', height: isMobile ? '180px' : '680px' }} src="https://www.youtube.com/embed/dG_HF8-UsCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> :
-              <iframe style={{ width: '100%', height: isMobile ? '180px' : '680px' }} src="https://www.youtube.com/embed/_QLLh0Cr7KE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            i18n.language === 'kr' ? <iframe style={{ width: '100%', height: isMobile ? '180px' : '680px' }} src="https://www.youtube.com/embed/dG_HF8-UsCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> :
+              <iframe style={{ width: '100%', height: isMobile ? '180px' : '680px' }} src="https://www.youtube.com/embed/_QLLh0Cr7KE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           }
         </VideoContainer>
         <ContentContainer ref={ref2Object}>
