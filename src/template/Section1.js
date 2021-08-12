@@ -31,7 +31,8 @@ const Logo = styled.img`
 
 function Section1({
   refObject,
-  isTrigger
+  isTrigger,
+  isVideoPlay
 }) {
 
   const windowSize = useWindowSize();
@@ -39,6 +40,7 @@ function Section1({
   return (
     <Container ref={refObject}>
       <VideoBackground
+        isVideoPlay={isVideoPlay}
         width={windowSize.width}
         height={windowSize.height}
         isFilter={true}

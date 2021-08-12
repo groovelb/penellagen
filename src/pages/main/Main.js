@@ -146,6 +146,38 @@ function Main() {
   });
 
   const [bgTheme, setBgTheme] = useState(sectionList[0].theme);
+  const [currentSection, setCurrentSection] = useState(1);
+  const [isVideo1Play, setIsVideo1Play] = useState(false);
+  const [isVideo2Play, setIsVideo2Play] = useState(false);
+  const [isVideo3Play, setIsVideo3Play] = useState(false);
+
+  // Video Control
+  useEffect(() => {
+    console.log("section changed:" + currentSection);
+    if(currentSection===1){
+      setIsVideo1Play(true);
+      setIsVideo2Play(false);
+      setIsVideo3Play(false);
+      console.log('section1!!!!');
+    } else if(currentSection===2){
+      setIsVideo1Play(false);
+      setIsVideo2Play(true);
+      setIsVideo3Play(false);
+      
+      console.log('section2!!!!');
+    }
+    else if(currentSection===3){
+      setIsVideo1Play(false);
+      setIsVideo2Play(false);
+      setIsVideo3Play(true);
+      console.log('section3!!!!');
+    }
+    else{
+      setIsVideo1Play(false);
+      setIsVideo2Play(false);
+      setIsVideo3Play(false);
+    }
+  },[currentSection])
 
   // Comparing Scroll Y and Each Ref Position
   useEffect(() => {
@@ -175,18 +207,21 @@ function Main() {
         setProgress(scrollY / bodyRef.current.scrollHeight);
       }
       if (refSection1.current.offsetTop <= scrollY && scrollY <= (refSection2.current.offsetTop - scrollOffset)) {
+        setCurrentSection(1);
         setBgTheme(sectionList[0].theme);
         setTriggerList({
           ...triggerList,
           section1: true
         });
       } else if ((refSection2.current.offsetTop - scrollOffset) < scrollY && scrollY < refSection3.current.offsetTop - scrollOffset) {
+        setCurrentSection(2);
         setBgTheme(sectionList[1].theme);
         setTriggerList({
           ...triggerList,
           section2: true
         });
       } else if (refSection3.current.offsetTop - scrollOffset < scrollY && scrollY < refSection4.current.offsetTop - scrollOffset) {
+        setCurrentSection(3);
         setBgTheme(sectionList[2].theme);
         setTriggerList({
           ...triggerList,
@@ -275,14 +310,17 @@ function Main() {
       <Section1
         refObject={refSection1}
         isTrigger={triggerList['section1']}
+        isVideoPlay={isVideo1Play}
       />
       <Section2
         refObject={refSection2}
         isTrigger={triggerList['section2']}
+        isVideoPlay={isVideo2Play}
       />
       <Section3
         refObject={refSection3}
         isTrigger={triggerList['section3']}
+        isVideoPlay={isVideo3Play}
       />
       <Section4
         refObject={refSection4}

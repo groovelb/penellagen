@@ -85,7 +85,8 @@ const TextIllust = styled.img`
 
 function Section2({
   refObject,
-  isTrigger
+  isTrigger,
+  isVideoPlay
 }) {
 
   // Language
@@ -123,6 +124,7 @@ function Section2({
               width={'100%'}
               height={'100%'}
               videoSrc={video_bg}
+              isVideoPlay={isVideoPlay}
             />
           </ToTop>
           <Title

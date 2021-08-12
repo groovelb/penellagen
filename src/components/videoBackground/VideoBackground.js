@@ -40,11 +40,16 @@ function VideoBackground({
     width,
     height,
     children,
-    isFilter
+    isFilter,
+    isVideoPlay
   }){
 
   const playerRef = useRef(null);
   const [playing, setPlaying] = useState(false);
+
+  useEffect(() => {
+    console.log("is video played: " + isVideoPlay);
+  },[isVideoPlay]);
 
   const playVideo = () => {
    console.log('load!');
@@ -59,7 +64,7 @@ function VideoBackground({
         ref={playerRef}
         url={videoSrc}
         autoPlay={false}
-        playing={playing}
+        playing={isVideoPlay}
         loop={true}
         muted={true}
         width={width}

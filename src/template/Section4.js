@@ -432,7 +432,7 @@ function Section4({
                 data={chartData1}
                 maxValue={550}
                 refObject={refChart1}
-                isTrigger={isChart1Trigger}
+                isTrigger={isMobile?true:isChart1Trigger}
               />
               <Exp color='lightBeige'>
                 {t('tech1-exp-s7')}
@@ -471,7 +471,7 @@ function Section4({
                 data={chartData2}
                 maxValue={100}
                 refObject={refChart2}
-                isTrigger={isChart2Trigger}
+                isTrigger={isMobile?true:isChart2Trigger}
                 index={0}
               />
               <Exp color='lightBeige'>
@@ -493,7 +493,7 @@ function Section4({
                 data={chartData3}
                 maxValue={100}
                 refObject={refChart2}
-                isTrigger={isChart2Trigger}
+                isTrigger={isMobile?true:isChart2Trigger}
                 index={2}
               />
               <Exp color='lightBeige'>
@@ -508,7 +508,7 @@ function Section4({
                 data={chartData4}
                 maxValue={100}
                 refObject={refChart2}
-                isTrigger={isChart2Trigger}
+                isTrigger={isMobile?true:isChart2Trigger}
                 index={3}
               />
               <Exp color='lightBeige'>

@@ -35,7 +35,7 @@ const Top = styled.div`
 const TopImage = styled.img`
   position: relative;
   top: ${props => 280*props.progress + 'px'};
-  transition: top 1s ease-out;
+  /* transition: top 1s ease-out; */
 `;
 
 const VideoBox = styled.div`

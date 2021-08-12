@@ -68,7 +68,8 @@ const ContentBox = styled.div`
 
 function Section3({
   refObject,
-  isTrigger
+  isTrigger,
+  isVideoPlay
 }) {
 
   // Language
@@ -98,6 +99,7 @@ function Section3({
             <VideoToLeft
               isTrigger={isTrigger}
               index={1}
+              isVideoPlay={isVideoPlay}
             >
               <VideoBackground
                 width={'100%'}
