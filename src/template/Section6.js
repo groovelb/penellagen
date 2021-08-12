@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { isMobile } from 'react-device-detect';
 // import theme from '../assets/theme/theme';
 import { useTranslation } from 'react-i18next';
 
@@ -34,7 +35,7 @@ const Top = styled.div`
 
 const TopImage = styled.img`
   position: relative;
-  top: ${props => 280*props.progress + 'px'};
+  top: ${props => isMobile?0:280*props.progress + 'px'};
   /* transition: top 1s ease-out; */
 `;
 

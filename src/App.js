@@ -5,6 +5,7 @@ import theme from './assets/theme/theme';
 import Main from './pages/main/Main';
 
 function App() {
+  console.log = function() {}
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />

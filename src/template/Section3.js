@@ -99,9 +99,9 @@ function Section3({
             <VideoToLeft
               isTrigger={isTrigger}
               index={1}
-              isVideoPlay={isVideoPlay}
             >
               <VideoBackground
+                isVideoPlay={isVideoPlay}
                 width={'100%'}
                 height={'100%'}
                 videoSrc={video_bg}
@@ -129,6 +129,7 @@ function Section3({
               width={'100%'}
               height={'100%'}
               videoSrc={video_bg}
+              isVideoPlay={isVideoPlay}
             />
           </VideoBox>
           <TextBox2to1 color={'black'}>

@@ -18,7 +18,7 @@ const Container = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: ${props => props.isFilter?'rgba(0,0,0,0.24)':'rgba(0,0,0,0)'};
+    background-color: ${props => props.isFilter ? 'rgba(0,0,0,0.24)' : 'rgba(0,0,0,0)'};
     z-index: 9;
   } */
 `;
@@ -36,30 +36,30 @@ const Content = styled.div`
 
 
 function VideoBackground({
-    videoSrc,
-    width,
-    height,
-    children,
-    isFilter,
-    isVideoPlay
-  }){
+  videoSrc,
+  width,
+  height,
+  children,
+  isFilter,
+  isVideoPlay
+}) {
 
   const playerRef = useRef(null);
   const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
     console.log("is video played: " + isVideoPlay);
-  },[isVideoPlay]);
+  }, [isVideoPlay]);
 
   const playVideo = () => {
-   console.log('load!');
-   setPlaying(true);
+    console.log('load!');
+    setPlaying(true);
   }
 
-  return(
-    <Container 
-    onClick={playVideo}
-    isFilter={isFilter}>
+  return (
+    <Container
+      onClick={playVideo}
+      isFilter={isFilter}>
       <ReactPlayer
         ref={playerRef}
         url={videoSrc}
@@ -71,7 +71,7 @@ function VideoBackground({
         height={height}
         controls={false}
         playsinline={true}
-        style={{display: 'flex'}}
+        style={{ display: 'flex' }}
         onReady={
           () => {
             playVideo();
@@ -81,7 +81,7 @@ function VideoBackground({
       <Content>
         {children}
       </Content>
-      
+
     </Container>
   )
 }

@@ -153,7 +153,6 @@ function Main() {
 
   // Video Control
   useEffect(() => {
-    console.log("section changed:" + currentSection);
     if(currentSection===1){
       setIsVideo1Play(true);
       setIsVideo2Play(false);
