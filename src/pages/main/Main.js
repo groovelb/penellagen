@@ -237,7 +237,7 @@ function Main() {
         console.log('section6');
         let section6Length = refSection6.current.offsetHeight;
         let progress = scrollY - (refSection6.current.offsetTop - scrollOffset);
-        setSection6Progress(progress/section6Length);
+        setSection6Progress(progress / section6Length);
 
         setBgTheme(sectionList[5].theme);
         setTriggerList({
@@ -266,9 +266,12 @@ function Main() {
         bgTheme={bgTheme}
         anchorlist={anchorlist}
       />
-      <Handle progress={progress}>
-        <img src={bgTheme === 'light' ? illust_handle_dark : illust_handle_light} alt='' />
-      </Handle>
+      {
+        !isMobile && <Handle progress={progress}>
+          <img src={bgTheme === 'light' ? illust_handle_dark : illust_handle_light} alt='' />
+        </Handle>
+      }
+
       <Section1
         refObject={refSection1}
         isTrigger={triggerList['section1']}
