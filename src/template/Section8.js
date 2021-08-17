@@ -1,5 +1,5 @@
 import react, { useState, useEffect } from 'react';
-import styled from '../components/chart/node_modules/styled-components';
+import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import emailjs, { init } from 'emailjs-com';
 
@@ -10,13 +10,11 @@ import TextField from '../components/form/TextField';
 import TextArea from '../components/form/TextArea';
 import CheckBox from '../components/form/CheckBox';
 import Button from '../components/button/Button';
-import ButtonText from '../components/button/ButtonText';
+import TextLink from '../components/button/TextLink';
 import Modal from '../components/modal/Modal';
-import SelectiveButtonList from '../components/modal/PrivacyPolicyModal';
 
 import illust_penellagen from '../assets/img/illust/illust_penellagen_png.png';
 import illust_text_section2 from '../assets/img/illust/illust_text_section2.svg';
-import PrivacyPolicyModal from '../components/modal/PrivacyPolicyModal';
 
 const Container = styled.div`
   width: 100%;
@@ -147,9 +145,6 @@ function Section8({
   const [isCheck, setIsCheck] = useState(false);
   const [bttText, setBttText] = useState(t('btt-send'));
 
-  // Modal
-  const [isPolicyModal, setIsPolicyModal] = useState(false);
-
   const setTextValue = (event) => {
     const {
       target: { name, value },
@@ -186,13 +181,6 @@ function Section8({
 
   return (
     <Container ref={refObject}>
-      {
-        isPolicyModal&&<PrivacyPolicyModal onClickClose={
-          () => {
-            setIsPolicyModal(false);
-          }
-        } />
-      }
       <Section>
         <ContentBox>
           <ColLeft
@@ -302,17 +290,11 @@ function Section8({
                   }}
                   checked={isCheck}
                 />
-                <ButtonText
+                <TextLink
                   className={'policy'}
-                  onClick={
-                    (e) => {
-                      e.preventDefault();
-                      setIsPolicyModal(true);
-                    }
-                  }
                 >
                   {t('contact-view-policy')}
-                </ButtonText>
+                </TextLink>
               </ActionBar>
             </Form>
           </ColLeft>

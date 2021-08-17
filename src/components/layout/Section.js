@@ -1,4 +1,4 @@
-import styled from '../chart/node_modules/styled-components';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Container = styled.div`
