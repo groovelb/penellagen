@@ -66,7 +66,11 @@ const Exp = styled.div`
   color: ${props => props.theme.color.black};
   margin-bottom: ${props => `calc(${props.theme.spacing.unit} * 3)`};
   @media screen and (max-width: 800px) {
-    text-align: left;
+    /* text-align: left; */
+    width: 65%;
+    p{
+      width: 100%;
+    }
   }
 `;
 
@@ -144,9 +148,12 @@ function Section2({
             isTrigger={isTrigger}
             index={4}
           >
-            {t('story-exp-s1')}<br />
-            {t('story-exp-s2')}<br />
-            {t('story-exp-s3')}
+            <p>
+              {t('story-exp-s1')}<br />
+              {t('story-exp-s2')}<br />
+              {t('story-exp-s3')}
+            </p>
+
           </ToTop>
         </Exp>
         <Exp>
@@ -154,10 +161,12 @@ function Section2({
             isTrigger={isTrigger}
             index={5}
           >
-            <strong>
-              {t('story-exp-s4')}<br />
-              {t('story-exp-s5')}
-            </strong>
+            <p>
+              <strong>
+                {t('story-exp-s4')}<br />
+                {t('story-exp-s5')}
+              </strong>
+            </p>
           </ToTop>
         </Exp>
         <ToTop
