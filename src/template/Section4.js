@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { isMobile } from 'react-device-detect';
+import { isMobile, isTablet } from 'react-device-detect';
 
 import styled, { keyframes } from 'styled-components';
 import { useTranslation } from 'react-i18next';
@@ -55,7 +55,7 @@ const Top = styled.div`
       width: 256px;
     }
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     div{ 
       width: 100% !important;
       margin-bottom: ${props => props.theme.spacing.contentMarginBottom1};
@@ -74,7 +74,7 @@ const TopRight = styled.div`
   ${props => props.theme.layout.flexCol}
   /* ${props => props.theme.layout.alignCenter} */
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     margin-top: -80px;
     margin-bottom: 0px !important;
   }
@@ -86,7 +86,7 @@ const TopRight = styled.div`
     object-fit: cover;
     animation: ${Floating} 6s ease-in-out infinite;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     .penellagen{
       width: 100%;
       height: auto;
@@ -115,7 +115,7 @@ const VideoContainer = styled.div`
   @media screen and (max-width: 1280px) {
     width: 100%;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
   }
 `;
@@ -140,7 +140,7 @@ const ContentSection = styled.div`
 const Col = styled.div`
   width: 50%;
   padding-right: 32px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     padding-right: 0px;
     width: 100%;
     margin-bottom: ${props => props.isBottomMargin?props.theme.spacing.subsectionMarginBottomSmall:0};
@@ -152,7 +152,7 @@ const Col = styled.div`
 
 const Col6 = styled.div`
   width: 60%;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
   }
   table{
@@ -169,7 +169,7 @@ const Penellagen = styled.div`
     width: 464px;
     height: 464px;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     img{
       width: calc(100% - 48px);
       height: auto;
@@ -179,7 +179,7 @@ const Penellagen = styled.div`
 
 const FloatingContainer = styled.div`
   animation: ${Floating} 6s ease-in-out infinite;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     display: none;
   }
 `;
@@ -191,7 +191,7 @@ const BackgrondTransition = styled.img`
 `;
 
 const TableContainer = styled.div`
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     margin-left: -24px;
     width: calc(100% + 48px);
     text-align: center;
@@ -362,6 +362,22 @@ function Section4({
     }
   }
 
+  const [videoHeight, setVideoHeight] = useState('');
+
+  // Set Video Height
+  useEffect(() => {
+    console.log(window);
+    if(window.innerWidth <= 1024){
+      console.log('mobile!');
+      let height = `calc(${window.innerWidth}px * 0.75)`;
+      console.log(height);
+      setVideoHeight(height);
+    }
+    else{
+      setVideoHeight('680px');
+    }
+  },[]);
+
   return (
     <Container
       color
@@ -400,8 +416,8 @@ function Section4({
         </Top>
         <VideoContainer>
           {
-            i18n.language === 'kr' ? <iframe style={{ width: '100%', height: isMobile ? '180px' : '680px' }} src="https://www.youtube.com/embed/dG_HF8-UsCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> :
-              <iframe style={{ width: '100%', height: isMobile ? '180px' : '680px' }} src="https://www.youtube.com/embed/_QLLh0Cr7KE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            i18n.language === 'kr' ? <iframe style={{ width: '100%', height: videoHeight}} src="https://www.youtube.com/embed/dG_HF8-UsCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> :
+              <iframe style={{ width: '100%', height: videoHeight }} src="https://www.youtube.com/embed/_QLLh0Cr7KE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           }
         </VideoContainer>
         <ContentContainer ref={ref2Object}>

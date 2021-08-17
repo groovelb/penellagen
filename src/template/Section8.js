@@ -34,7 +34,7 @@ const ContentBox = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: ${props => props.theme.spacing.contentMarginBottom2};
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1024px) {
     .penellagen{
       display: none;
     }
@@ -47,14 +47,14 @@ const Col1 = styled.div`
 
 const ColLeft = styled.div`
   width: calc(60% - 12px);
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
   }
 `;
 
 const ColRight = styled.div`
   width: calc(40% - 12px);
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
   }
 `;
@@ -67,7 +67,7 @@ const Form = styled.form`
 
 const Col2 = styled.div`
   width: calc(50% - 12px);
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
   }
 `;

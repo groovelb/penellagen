@@ -78,7 +78,7 @@ const Col = styled.div`
     bottom: -64px;
     left: 0;
   }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
     margin-bottom: ${props => props.theme.spacing.contentMarginBottom1};
     a{

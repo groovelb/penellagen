@@ -21,7 +21,7 @@ const Top = styled.div`
   width: 100%;
   position: relative;
   .video_pc{
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1024px) {
       display: none;
     }
   }
@@ -38,7 +38,7 @@ const VideoBox = styled.div`
   transition: all 1s ease-out;
   transition-delay: ${props => `${props.index * 0.2}s`};
   overflow: hidden;
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1024px) {
     position: static;
     border-radius: 0px;
     width: 100%;
@@ -58,7 +58,7 @@ const ContentBox = styled.div`
   ${props => props.theme.typeBlock.body}
   .video_mobile{
     display: none;
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1024px) {
       display: inline-block !important;
       margin-top: -48px;
       margin-bottom: ${props => props.theme.spacing.contentMarginBottom1};

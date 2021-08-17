@@ -28,7 +28,7 @@ const Container = styled.div`
   ${props => props.theme.layout.flexRowCol}
   width: 50%;
   padding-right: 124px;
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
     padding-right: 0px;
   }

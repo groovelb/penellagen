@@ -29,7 +29,7 @@ const Container = styled.div`
   /* justify-content: space-between; */
   width: 50%;
   padding-right: 48px;
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1024px) {
     padding-right: 0px;
     width: 100%;
     padding-right: 0px;
@@ -61,7 +61,7 @@ const Title = styled.div`
   }};
   max-width: ${props => props.theme.spacing.horizonTitle};
   margin-right: 32px;
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1024px) {
     width: 100% !important;
     margin-right: 0px;
     /* white-space: nowrap; */
@@ -93,7 +93,7 @@ const Content = styled.div`
     }
   }};
   }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1024px) {
     width: 100% !important;
   }
 `;
