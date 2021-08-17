@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "../chart/node_modules/styled-components";
 
 const Container = styled.div`
   width: 100%;

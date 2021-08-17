@@ -1,7 +1,7 @@
 import react, { useState, useEffect } from 'react';
 import useWindowSize from '../../hook/useWindowSize';
 import CardProduct from '../../components/card/CardProduct';
-import styled from 'styled-components';
+import styled from '../chart/node_modules/styled-components';
 import ic_next from '../../assets/img/icon/ic_arrow_next_black.svg';
 import ic_prev from '../../assets/img/icon/ic_arrow_prev_black.svg';
 

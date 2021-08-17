@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '../components/chart/node_modules/styled-components';
 import { useTranslation } from 'react-i18next';
 
 import ProductCardSlide from '../components/slide/ProductCardSlide';

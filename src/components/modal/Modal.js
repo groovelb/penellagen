@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "../chart/node_modules/styled-components";
 import IcClose from "../../assets/img/icon/ic_close.svg";
 
 const Backdrop = styled.div`
@@ -15,6 +15,8 @@ const Backdrop = styled.div`
 `;
 
 const Content = styled.div`
+  max-height: calc(100% - 40px);
+  overflow-y: auto;
   position: relative;
   width: ${props => {
     if(props.size==='small') return '480px';

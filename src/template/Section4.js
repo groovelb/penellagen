@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { isMobile } from 'react-device-detect';
 
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from '../components/chart/node_modules/styled-components';
 import { useTranslation } from 'react-i18next';
 
 import Section from '../components/layout/Section';
-import Chart from '../components/Chart/Chart';
+import Chart from '../components/chart/Chart';
 
 import ButtonLink from '../components/button/ButtonLink';
 

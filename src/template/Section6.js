@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '../components/chart/node_modules/styled-components';
 import { isMobile } from 'react-device-detect';
 // import theme from '../assets/theme/theme';
 import { useTranslation } from 'react-i18next';
@@ -155,7 +155,9 @@ return (
               </Exp>
               {
                 i18n.language !== 'cn' &&
-                <ButtonLink>
+                <ButtonLink
+                to={'http://www.starstech.co.kr/kor/'}
+                >
                   {t('move-exp-s11')}
                 </ButtonLink>
               }
@@ -178,7 +180,9 @@ return (
               </Exp>
               {
                 i18n.language !== 'cn' &&
-                <ButtonLink>
+                <ButtonLink
+                  to={'http://www.starstech.co.kr/kor/'}
+                >
                   {t('move-exp-s11')}
                 </ButtonLink>
               }

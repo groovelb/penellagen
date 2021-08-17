@@ -1,7 +1,7 @@
 // Global
 import React, { useEffect, useState, useRef } from "react";
 import { isMobile } from 'react-device-detect';
-import styled from 'styled-components';
+import styled from '../../components/chart/node_modules/styled-components';
 import theme from '../../assets/theme/theme';
 
 // Hook
@@ -192,7 +192,7 @@ function Main() {
       section4: refSection4.current.offsetTop,
       section5: refSection5.current.offsetTop,
       section6: refSection6.current.offsetTop,
-      section7: refSection7.current.offsetTop,
+      // section7: refSection7.current.offsetTop,
       section8: refSection8.current.offsetTop,
     })
     // Prevent Ref Pre-lading
@@ -267,7 +267,8 @@ function Main() {
           ...triggerList,
           section5: true
         });
-      } else if (refSection6.current.offsetTop - scrollOffset < scrollY && scrollY < refSection7.current.offsetTop - scrollOffset) {
+        // Product섹션 복귀시 refSection8 > refSection7로 수정
+      } else if (refSection6.current.offsetTop - scrollOffset < scrollY && scrollY < refSection8.current.offsetTop - scrollOffset) {
         console.log('section6');
         let section6Length = refSection6.current.offsetHeight;
         let progress = scrollY - (refSection6.current.offsetTop - scrollOffset);
@@ -278,13 +279,15 @@ function Main() {
           ...triggerList,
           section6: true
         });
-      } else if (refSection7.current.offsetTop - scrollOffset < scrollY && scrollY < refSection8.current.offsetTop - scrollOffset) {
-        setBgTheme(sectionList[6].theme);
-        setTriggerList({
-          ...triggerList,
-          section7: true
-        });
-      } else if (refSection8.current.offsetTop < scrollY) {
+      }
+      // else if (refSection7.current.offsetTop - scrollOffset < scrollY && scrollY < refSection8.current.offsetTop - scrollOffset) {
+      //   setBgTheme(sectionList[6].theme);
+      //   setTriggerList({
+      //     ...triggerList,
+      //     section7: true
+      //   });
+      // } 
+      else if (refSection8.current.offsetTop < scrollY) {
         setTriggerList({
           ...triggerList,
           section8: true
@@ -340,10 +343,10 @@ function Main() {
         isTrigger={triggerList['section6']}
         progress={section6Progress}
       />
-      <Section7
+      {/* <Section7
         refObject={refSection7}
         isTrigger={triggerList['section7']}
-      />
+      /> */}
       <Section8
         refObject={refSection8}
         isTrigger={triggerList['section8']}

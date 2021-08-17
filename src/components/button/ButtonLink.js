@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '../chart/node_modules/styled-components';
 import ic_arrow_pink_orange from '../../assets/img/icon/ic_arrow_long_pink_orange.svg';
 
 

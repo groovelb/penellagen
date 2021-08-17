@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '../components/chart/node_modules/styled-components';
 import { useTranslation } from 'react-i18next';
 
 import Section from '../components/layout/Section';
@@ -145,9 +145,7 @@ function Section3({
               </p>
               <p>
                 {t('brand-exp-s5')}
-              </p>
-              <p>
-                <strong>{t('brand-exp-s6')}</strong>
+                <strong> {t('brand-exp-s6')}</strong>
               </p>
             </ToTop>
           </TextBox2to1>

@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import styled from 'styled-components';
+import styled from '../chart/node_modules/styled-components';
 import ReactPlayer from 'react-player';
 // import videoSrc from '../../assets/video/video_bg_section1.mp4';
 

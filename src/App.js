@@ -1,5 +1,5 @@
 
-import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import { ThemeProvider, createGlobalStyle } from './components/chart/node_modules/styled-components';
 import './translate/I18nSetting';
 import theme from './assets/theme/theme';
 import Main from './pages/main/Main';
@@ -130,6 +130,9 @@ const GlobalStyle = createGlobalStyle`
   }
   strong{
     font-weight: 500;
+  }
+  a{
+    text-decoration: none !important;
   }
 `;
 

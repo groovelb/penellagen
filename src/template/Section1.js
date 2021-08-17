@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '../components/chart/node_modules/styled-components';
 import {isMobile} from 'react-device-detect';
 import Section from '../components/layout/Section';
 import VideoBackground from '../components/videoBackground/VideoBackground';
