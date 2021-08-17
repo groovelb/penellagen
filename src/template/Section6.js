@@ -1,4 +1,4 @@
-import styled from '../components/chart/node_modules/styled-components';
+import styled from 'styled-components';
 import { isMobile } from 'react-device-detect';
 // import theme from '../assets/theme/theme';
 import { useTranslation } from 'react-i18next';

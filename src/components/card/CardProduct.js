@@ -1,5 +1,5 @@
 
-import styled from '../chart/node_modules/styled-components';
+import styled from 'styled-components';
 import ic_arrow from '../../assets/img/icon/ic_arrow_long_white.svg';
 
 const Container = styled.div`

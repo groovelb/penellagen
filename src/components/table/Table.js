@@ -1,4 +1,4 @@
-import styled from '../chart/node_modules/styled-components';
+import styled from 'styled-components';
 
 const Container = styled.table`
   width: 100%;

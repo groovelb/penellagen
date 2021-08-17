@@ -1,7 +1,7 @@
 // Global
 import React, { useEffect, useState, useRef } from "react";
 import { isMobile } from 'react-device-detect';
-import styled from '../../components/chart/node_modules/styled-components';
+import styled from 'styled-components';
 import theme from '../../assets/theme/theme';
 
 // Hook

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { isMobile } from 'react-device-detect';
 import * as d3 from "d3";
-import styled, { keyframes } from '../chart/node_modules/styled-components';
+import styled, { keyframes } from 'styled-components';
 import { useTranslation } from 'react-i18next';
 
 import illust_penellagen from '../../assets/img/illust/illust_penellagen2.png';

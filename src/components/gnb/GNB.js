@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled from '../chart/node_modules/styled-components';
+import styled from 'styled-components';
 import disableScroll from 'disable-scroll';
 import { useTranslation } from 'react-i18next';
 

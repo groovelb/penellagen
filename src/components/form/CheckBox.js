@@ -1,4 +1,4 @@
-import styled from "../chart/node_modules/styled-components";
+import styled from "styled-components";
 
 // Styling Code Using Plus Selector In GlobalStyle @ App.js.
 const Container = styled.div`

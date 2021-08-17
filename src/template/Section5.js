@@ -1,4 +1,4 @@
-import styled from '../components/chart/node_modules/styled-components';
+import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 
 import ToTop from '../components/motion/ToTop';
