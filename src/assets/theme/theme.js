@@ -70,6 +70,11 @@ const theme = {
       font-size: 108px;
       line-height: 124px;
       letter-spacing: 11px;
+      @media screen and (max-width: 1024px) {
+        font-size: 86px;
+        line-height: 104px;
+        letter-spacing: 6px;
+      }
       @media screen and (max-width: 480px) {
         font-size: 42px;
         line-height: 52px;
