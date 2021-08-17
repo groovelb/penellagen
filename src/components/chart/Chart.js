@@ -30,7 +30,7 @@ const Bar = styled.div`
   ${props => props.theme.layout.flexRow}
   ${props => props.theme.layout.alignCenter}
   justify-content: flex-end;
-  padding-right: 8px;
+  padding-right: 24px;
 
   background-color: ${props => {
     switch (props.bgColor) {
