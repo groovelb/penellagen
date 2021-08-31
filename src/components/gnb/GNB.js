@@ -80,6 +80,7 @@ const MenuList = [
   'About Penellagen',
   'Skin Technology',
   'Sustainability',
+  'Our Move',
   // 'Products',
   'Contact'
 ];
@@ -127,7 +128,12 @@ function GNB({
               key={i}
               onClick={() => {
                 console.log('click')
-                scroll.scrollTo(anchorlist[`section${i + 3}`]);
+                let index = i;
+                if(i===4){
+                  index = i+1;
+                }
+                console.log(index + 3);
+                scroll.scrollTo(anchorlist[`section${index + 3}`]);
               }}
             >
               {menu}
