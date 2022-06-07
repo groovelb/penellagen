@@ -31,12 +31,14 @@ const Container = styled.a`
 
 function Button({
   to,
-  children
+  children,
+  isDownload
 }) {
   return(
     <Container
       href={to}
       target={'_blank'}
+      isDownload={isDownload}
     >
       {children}
       <img src={ic_arrow_pink_orange} alt='' />

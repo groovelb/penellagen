@@ -28,6 +28,7 @@ import illust_penellagen_top_cn_pc from '../assets/img/illust/section4Top/illust
 import illust_penellagen_top_cn_mobile from '../assets/img/illust/section4Top/illust_mobile_Cn.png';
 import ic_logo_text_white from '../assets/img/logo/logo_text_white.svg';
 import img_bg_wave from '../assets/img/background/img_bg_wave.png';
+import file_download from '../assets/file/Asterias pectinifera derived collagen peptide-encapsulating elastic nanoliposomes for the cosmetic application.pdf';
 
 
 const Container = styled.div`
@@ -416,8 +417,8 @@ function Section4({
         </Top>
         <VideoContainer>
           {
-            i18n.language === 'kr' ? <iframe style={{ width: '100%', height: videoHeight}} src="https://www.youtube.com/embed/dG_HF8-UsCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> :
-              <iframe style={{ width: '100%', height: videoHeight }} src="https://www.youtube.com/embed/_QLLh0Cr7KE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            i18n.language === 'kr' ? <iframe style={{ width: '100%', height: videoHeight}} src="https://player.vimeo.com/video/715134210?h=d9a389772f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> :
+              <iframe style={{ width: '100%', height: videoHeight }} src="https://player.vimeo.com/video/715137534?h=7ebf53c1ae" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           }
         </VideoContainer>
         <ContentContainer ref={ref2Object}>
@@ -542,7 +543,10 @@ function Section4({
               </TableContainer>
               {
                 i18n.language !== 'cn' &&
-                <ButtonLink>
+                <ButtonLink
+                  to={file_download}
+                  isDownload={true}
+                >
                   {t('tech2-exp-s25')}
                 </ButtonLink>
               }
