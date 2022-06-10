@@ -38,7 +38,7 @@ function Button({
     <Container
       href={to}
       target={'_blank'}
-      isDownload={isDownload}
+      download={isDownload}
     >
       {children}
       <img src={ic_arrow_pink_orange} alt='' />
